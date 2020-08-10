@@ -1,0 +1,315 @@
+// Promotion2
+.policy-v2{
+	margin: 0px 0px 30px;
+	height: 60px;
+	.policy-item{
+		text-align: center;
+		padding-top: 10px;
+        &:before{
+            display: inline-block;
+            content: '';
+            border-right: 1px solid $border-color;
+            height: 40px;
+            float: right;
+        }
+
+        &:last-child:before{
+         display: none;
+     }
+
+     h3{
+         font-size: 19px;
+         font-weight: normal;
+     }
+     span{
+         font-size: 13px;
+         color: #bcbcbc;
+         font-family: $font3;
+     }
+ }	
+
+}
+// end promotion2
+
+// End promotion1
+.policy-v1{
+    @extend .policy-v2;
+    margin: 0 0 10px;
+    .policy-item{
+        padding-top:10px;
+        padding-bottom:10px;
+        background: #e9f2ff;
+        &.mid{
+            background: #ffeaeb;
+        }
+    }
+    
+}
+
+// promotion3
+.policy-v3{
+    margin-bottom: 65px;
+    .policy-item{
+        border: 1px solid #bcbcbc;
+        text-align: center;
+        padding-top: 10px;
+
+        position: relative;
+        overflow: hidden;
+        @-webkit-keyframes pulse {
+            0% { -webkit-transform: scale(1); }
+            50% { -webkit-transform: scale(1.5) rotate(180deg); }
+            100% { -webkit-transform: scale(1); }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.5) ; }
+            100% { transform: scale(1); }
+        }  
+        &:hover{
+            &:before{
+              webkit-animation-duration: 1s;
+              animation-duration: 1s;
+              -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+              -webkit-animation-name: pulse;
+              animation-name: pulse;
+          }
+      }
+
+
+      &:before{
+        display: block;          
+        font-size: 50px;
+        color: $hover-color;
+        line-height: 105px;
+        @include fontIcons2;
+    }
+    h3{
+        font-weight: normal;
+        font-size: 18px;
+    }
+    span{
+        font-size: 14px;
+        color: $hover-color;
+        font-family: $font1;
+        display: inline-block;
+        margin:8px 0 40px;
+    }
+    &.free-ship{
+        &:before{
+            content: "\e625";
+        }
+    }
+    &.t247{
+        &:before{
+            content: "\e6b5";
+        }
+    }
+    &.refurn{
+        &:before{
+            content: "\e6c2";
+        }
+    }
+}
+}
+// end promotion4
+
+.policy-v4{
+    margin-top: 90px;
+    text-align: center;
+    .parallax-window {
+        min-height: 510px;
+        background: transparent;
+        position: relative;
+        &:before{
+            content: '';
+            position: absolute;
+            background: rgba(33,33,33,0.92);
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: -1;
+            height: 100%;
+        }
+    }
+    .line{
+        display: inline-block;
+        margin-top: 27px;
+        content: "";
+        width: 90px;
+        height: 1px;
+        background: #FFF none repeat scroll 0% 0%;
+        margin-bottom: 20px;
+    }
+    .top-policy{
+        margin: 70px 0 45px;
+        z-index: 2;
+        .h3-title{
+            font-size: 24px;
+            line-height: 24px;
+            font-family: $font2;
+            font-weight: bold;
+            color: #fff;
+
+        }
+        .des{
+            color: 16px;
+            color: #fff;
+            line-height: 24px;
+            font-family: $font3;
+            font-weight:500;
+            width: 88%;
+            margin-left: 5.5%;
+        }
+    }
+    .policy-items{
+        text-align: center;
+        padding-top: 10px;
+        border: 1px solid #bcbcbc;
+        position: relative;
+        overflow: hidden;
+        @-webkit-keyframes pulse {
+            0% { -webkit-transform: scale(1); }
+            50% { -webkit-transform: scale(1.5) rotate(180deg); }
+            100% { -webkit-transform: scale(1); }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.5) ; }
+            100% { transform: scale(1); }
+        }
+            &:hover{
+                &:before{
+                  webkit-animation-duration: 1s;
+                  animation-duration: 1s;
+                  -webkit-animation-fill-mode: both;
+                  animation-fill-mode: both;
+                  -webkit-animation-name: pulse;
+                  animation-name: pulse;
+              }
+          }
+
+          &:before{
+            display: block;
+            
+            font-size: 50px;
+            color: #fff;
+            line-height: 105px;
+            @include fontIcons2;
+
+        }
+        div{
+            font-size: 18px;
+            color: $hover-color;
+        }
+        span{
+            font-size: 14px;
+            color: #fff;
+            font-family: $font1;
+            display: inline-block;
+            margin:8px 0 40px;
+        }
+        &.free-ship{
+            &:before{
+                content: "\e625";
+            }
+        }
+        &.t247{
+            &:before{
+                content: "\e6b5";
+            }
+        }
+        &.refurn{
+            &:before{
+                content: "\e6c2";
+            }
+        }
+    }
+}
+// end promotion v4
+
+// promotion v5
+.policy-v5{
+    float: left;
+    margin-bottom: 65px;
+    margin-top: 30px;
+    .sv-col{
+        padding-right:0px;
+        padding-left:0px;
+    }
+    .policy-item{
+        // border: 1px solid #bcbcbc;
+        border-right:1px solid #ecf0f1;
+        border-top:1px solid #ecf0f1;
+        border-bottom:1px solid #ecf0f1;
+
+        text-align: center;
+        padding:50px 65px;
+
+        position: relative;
+        overflow: hidden;
+        @-webkit-keyframes pulse {
+            0% { -webkit-transform: scale(1); }
+            50% { -webkit-transform: scale(1.5) rotate(180deg); }
+            100% { -webkit-transform: scale(1); }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.5) ; }
+            100% { transform: scale(1); }
+        }  
+        &:hover{
+            background:#f9f9f9;
+            &:before{
+              webkit-animation-duration: 1s;
+              animation-duration: 1s;
+              -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+              -webkit-animation-name: pulse;
+              animation-name: pulse;
+          }
+      }
+
+
+      &:before{
+        display: block;          
+        font-size: 50px;
+        color: $hover-color;
+        line-height: 105px;
+        @include fontIcons2;
+    }
+    h3{
+        font-weight: normal;
+        font-size: 18px;
+    }
+    span{
+        font-size: 14px;
+        color: #999;
+        font-family: $font1;
+        display: inline-block;
+        margin:8px 0 40px;
+    }
+    &.develope-sv{
+        &:before{
+            content: "\e60a";
+        }
+    }
+    &.email-sv{
+        &:before{
+            content: "\e63b";
+        }
+    }
+    &.design-sv{
+        &:before{
+            content: "\e62a";
+        }
+    }
+    &.result-sv{
+        &:before{
+            content: "\e64e";
+        }
+    }
+}
+}
+// end promotion v5

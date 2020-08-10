@@ -1,0 +1,311 @@
+/*-----------------------------------------------------------------------------
+-	Checkout page  -
+version:   	1.0.0
+date:      	23/10/15
+author:		EngoCreative
+email:     	info@engocreative.com
+website:   	http://www.engocreative.com
+-----------------------------------------------------------------------------*/
+
+/* --------------------------
+
+	8.6 Shop Checkout
+
+--------------------------- */
+
+.return {
+
+	font-size: 15px;
+
+}
+
+.return a {
+
+	text-decoration: underline;
+
+	font-weight: bold;
+
+}
+
+.checkout-form {
+
+	padding: 30px 0 0;
+
+}
+
+.checkout-form h2 {
+
+	font-size: 20px;
+
+	font-weight: bold;
+
+	text-transform: uppercase;
+
+	letter-spacing: 1px;
+
+	margin: 0 0 25px;
+
+}
+
+.checkout-form label {
+
+	display: block;
+
+	font-weight: normal;
+
+	font-family: 'Montserrat', sans-serif;
+
+	text-transform: uppercase;
+
+	color: #212121;
+
+	margin-bottom: 7px;
+
+}
+
+.your-order {
+
+	padding: 30px 0;
+	.price{
+		color: $text-color;
+		
+	}
+
+}
+
+.your-order .title {
+
+	font-size: 20px;
+
+	text-transform: uppercase;
+
+	color: #212121;
+
+	font-weight: bold;
+
+	text-align: center;
+
+}
+
+.your-order .title:after {
+
+	display: block;
+
+	width: 80px;
+
+	height: 2px;
+
+	background: $hover-color;
+
+	margin: 30px auto;
+
+	content: "";
+
+}
+
+.your-order table {
+
+	width: 100%;
+
+}
+
+.your-order table tr > *:last-child {
+
+	text-align: right;
+
+}
+
+.your-order table th,
+
+.your-order table td {
+
+	border-bottom: 1px solid #e9e9e9;
+
+	padding: 10px 15px;
+
+}
+
+.your-order table th {
+
+	font-family: 'Montserrat', sans-serif;
+
+	text-transform: uppercase;
+
+	color: #212121;
+
+}
+
+.your-order table .shipping > *,
+
+.your-order table .cart-subtotal > * {
+
+	padding-top: 35px;
+
+}
+
+.your-order table .order-total > * {
+
+	padding: 25px 0 0;
+
+	vertical-align: top;
+
+}
+
+.your-order table .shipping td {
+
+	font-size: 18px;
+	font-family: $font3;
+	color: #373737;
+
+}
+
+.your-order table .amount {
+
+	font-size: 20px;
+
+	font-family: 'Montserrat', sans-serif;
+
+	font-weight: normal;
+
+	color: #212121;
+
+}
+
+.your-order table .red-bg {
+
+	height: 40px;
+	background: $hover-color;
+	color: #fff;
+
+	line-height: 40px;
+
+	padding: 0 15px;
+
+	font-size: 16px;
+
+	font-family: 'Montserrat', sans-serif;
+	.amount{
+		color: #fff;
+	}
+
+}
+
+.your-order table .black-bg .amount {
+
+	color: #fbf063;
+
+}
+
+.your-order table .table-title th {
+
+	font-size: 18px;
+
+}
+
+.your-order table ul {
+
+	margin: 0;
+
+	padding: 0;
+
+	list-style: none;
+
+}
+
+.your-order table ul li {
+
+	padding: 3px 0;
+	color: $hover-color;
+	text-transform: uppercase;
+
+}
+
+.your-order table ul li .product-qty {
+
+	float: left;
+	a{
+		text-transform: capitalize;
+		font-size: 20px;
+		font-family: $font1;
+		color: $text-color;
+	}
+
+
+}
+
+
+.payment_methods {
+		ul {
+
+		margin: 0;
+
+		padding: 3px 0;
+
+		list-style: none;
+
+	}
+	p{
+		color: #555555;
+		font-family: $font3;
+		line-height: 50px;
+	}
+}
+
+.payment_methods ul li {
+
+	padding-bottom: 30px;
+
+}
+
+.payment_methods ul label {
+	font-weight: bold;
+	letter-spacing:1px;
+	font-size: 18px;
+	text-transform: uppercase;
+	display: block;
+
+}
+
+.payment_methods .checkbox {
+
+	border-bottom: 1px solid #e9e9e9;
+
+}
+
+.payment-box {
+
+	border-bottom: 1px solid #e9e9e9;
+
+	padding: 3px 0 30px;
+
+	line-height: 24px;
+	p{
+		font-weight: normal;
+		font-family: $font3;
+		color: #555555;
+	}
+
+}
+
+.paypal-method .checkbox {
+
+	padding-bottom: 25px;
+	a{
+		
+	}
+
+
+}
+
+.paypal-method img {
+
+	margin-right: 30px;
+	display: inline;
+
+}
+
+.paypal-method label {
+
+	margin-bottom: 20px;
+
+}

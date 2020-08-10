@@ -1,0 +1,154 @@
+/*-----------------------------------------------------------------------------
+-	Base Stylesheet  -
+version:   	1.0.0
+date:      	23/10/15
+author:		EngoCreative
+email:     	info@engocreative.com
+website:   	http://www.engocreative.com
+-----------------------------------------------------------------------------*/
+
+html {
+    font-size: 62.5%;
+}
+
+body{
+	font-family: $font2, sans-serif;
+	color: #333;
+	font-size: 1.4rem;
+	font-style: normal;
+    font-weight: 400;
+    line-height: 1.42857;
+    overflow-x:hidden; 
+}
+
+/*---------- Tool ----------*/
+.d-table{
+  display: table;
+  width: 100%;
+  > div{ 
+    display: table-cell;
+  	vertical-align: middle;
+  }
+}
+
+.f-left{ float: left !important;}
+.f-right{ float: right !important;}
+.f-none{ float: none !important;}
+
+.a-left{ text-align: left !important;}
+.a-right{ text-align: right !important;}
+.a-center{ text-align: center !important;}
+
+
+/*---------- Links ----------*/
+.links{
+	list-style: none;
+	a{		
+		text-decoration: none;		
+		display: block;
+		line-height: 26px;
+	}
+	&.links-inline{		
+		@include clearfix();
+		li{
+			float: left;
+			margin-right: 10px;		
+			
+			&:last-child{
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+a:hover{ color: $hover-color;}
+a:focus{
+	outline: none;
+}
+
+.off-canvas-content{
+	position: fixed!important;
+}
+.mini-cart-content.off-canvas-content{
+  width: 320px;
+	-webkit-transition: -webkit-transform 0.5s ease;
+    -o-transition: -o-transform 0.5s ease;
+    transition: transform 0.5s ease;
+    -webkit-transform:  translateX(100%);
+	    -ms-transform:  translateX(100%);
+	    -o-transform:  translateX(100%);
+	    transform: translateX(100%);
+	    &.show{
+	    	-webkit-transform:  translateX(0%);
+	    -ms-transform:  translateX(0%);
+	    -o-transform:  translateX(0%);
+	    transform: translateX(0%);
+	    }
+}
+
+.img-eff1{
+  position: relative;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: auto;
+  }
+  .ov1,.ov2,.ov3,.ov4{
+    -webkit-transition: 400ms;
+    -moz-transition: 400ms;
+    -ms-transition: 400ms;
+    -o-transition: 400ms;
+    transition: 400ms;
+    position: absolute;
+    background: #fff;
+    z-index: 1;
+  }
+  img{
+    @include trans3;
+  }
+  .ov1{
+    left: 100%;
+    top: 5%;
+    width: 90%;
+    height: 2px;
+  }
+  .ov2{
+    top: 100%;
+    right: 5%;
+    height: 90%;
+    width: 2px;
+  }
+  .ov3{
+    right: 100%;
+    bottom: 5%;
+    width: 90%;
+    height: 2px;
+  }
+  .ov4{
+    left: 5%;
+    bottom: 100%;
+    height: 90%;
+    width: 2px;
+  }
+  &:hover{
+    .ov1{
+      left: 5%;
+    }
+    .ov2{
+      top: 5%;
+    }
+    .ov3{
+      right: 5%;
+    }
+    .ov4{
+      bottom: 5%;
+    }
+    img{
+      transform: scale(1.05);
+-webkit-transform: scale(1.05);
+-moz-transform: scale(1.05);
+-o-transform: scale(1.05);
+-ms-transform: scale(1.05);
+    }
+  }
+}

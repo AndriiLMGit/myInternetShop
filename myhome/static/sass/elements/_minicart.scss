@@ -1,0 +1,280 @@
+.mini-cart{
+	position: relative;
+}
+.cart-control{
+	cursor: pointer;
+}
+
+.mini-cart-content{
+	position: absolute;
+	top: 74px;
+	min-width: 310px;
+	right: -23px;
+	background: #212121;
+	z-index: 999;
+	padding: 15px;
+	opacity: 0;
+	visibility: hidden;
+	@include trans025;
+	&.active{
+		opacity: 1;
+		top: 64px;
+		visibility: visible;
+	}
+	&:before{
+		content: '';
+		top: -11px;
+		border-bottom: 11px solid #212121;
+		border-left: 11px solid transparent;
+		border-right: 11px solid transparent;
+
+		position: absolute;
+		right: 68px;
+	}
+	
+}
+.total-minicart{
+	padding-top: 16px;
+	strong{
+		text-align: left;
+		width: 40%;
+		font-weight: normal;
+		color: #888;
+	}
+	.total{
+		font-family: $font2;
+		font-weight: 700;
+		text-transform: uppercase;
+		font-size: 14px;
+	}
+	.amount{
+		text-align: right;
+		width: 58%;
+		font-size: 18px;
+		font-weight: 700;
+		color: #fe5555;
+		float: right;
+	}
+	.buttons{
+		margin-left: 0;
+		margin-right: 0;
+		padding: 15px 0 0;
+	}
+}
+.btn.btn-minicart{
+	padding: 13px 30px;
+	border: 1px solid #888;
+	color: #888;
+	font-size: 12px!important;
+	&:hover{
+		color:#fff!important;
+		background: $hover-color;
+		border: 1px solid $hover-color;
+
+	}
+	&.checkout{
+		color:#fff;
+		background:$hover-color;
+		border: 1px solid $hover-color;
+		&:hover{
+			background: none;
+			color: $hover-color!important;
+		}
+	}
+}
+.cart_list{
+	.item{
+		border-bottom: 1px solid #373737;
+		padding:15px 0;
+		position: relative;
+		img{
+			margin-right: 15px;
+		}
+		.remove{
+			position: absolute;
+			right: 0;
+			bottom: 25px;
+			color: #fff;
+			&:hover{
+				color: $hover-color;
+				i{
+					
+
+				}
+			}
+
+		}
+
+		
+		.price {
+			margin-bottom: 5px;
+			.amount{
+				font-family: $font2;
+				color: $hover-color;
+				font-size: 18px;
+				margin-right: 5px;
+			}
+			del{
+				color: #b5b5b5;
+				font-size: 14px;
+			}
+		}
+	}
+	.qty{
+		color: #888888;
+		font-size: 14px;
+	}
+	h3.name{
+		
+		
+		text-transform: none;
+		margin-top: 4px;
+		margin-bottom: 7px;
+		a{	font-size: 18px;
+			font-family: "Lora";
+			font-weight: normal;
+			line-height: 20px;
+			color: #fff;
+			&:hover{
+				color:#fe5555;
+			}
+		}
+	}
+}
+
+.mini-cart.white{
+	.mini-cart-content{
+		background: #fff;
+		-webkit-box-shadow: 0px 5px 14px -1px rgba(136,136,136,1);
+		-moz-box-shadow: 0px 5px 14px -1px rgba(136,136,136,1);
+		box-shadow: 0px 5px 14px -1px rgba(136,136,136,1);
+		&:before,&:after{
+			border-bottom: 11px solid #d5d5d5;
+			right: 80px;
+			opacity: 0.2;
+		}
+	}
+	.cart_list{
+		.item{
+			border-bottom:1px solid #f6f6f6;
+			.remove{
+				color: #d5d5d5;
+				&:hover{
+					color: $hover-color;
+				}
+			}
+		}
+		h3.name a{
+			color: #212121;
+			&:hover{
+				color: $hover-color;
+			}
+		} 	
+	}
+
+}
+
+.off-canvas-right{
+	.mini-cart-content{
+		top:0;
+		right: 0;
+	}
+	.top-mini-cart{
+		border-bottom:1px solid #373737;
+		padding-bottom: 15px;
+		.close-off-canvas{
+			color: #fff;
+			
+			font-size: 30px;
+			margin-top: 10px;
+		}
+	}
+}
+//
+.toplinks.dropdown-content{
+	padding:0;
+	.set{
+		text-align: left;
+		padding: 20px 15px;
+		border-bottom: 1px solid #2d2d2d;
+		&:last-child{
+			border-bottom:0;
+			
+		}
+		.title{
+			color: #fff;
+			text-transform: uppercase;
+			font-size: 18px;
+			margin-bottom: 14px;
+			display: inline-block;
+		}
+	}
+} 
+.langs{
+	a{
+		display: inline-block;
+		width: 60px;
+		height: 35px;
+		margin:0 3px;
+		&.active{
+			img{
+				opacity: 1;
+			}
+		}
+		img{
+			width: 100%;
+			height: 100%;
+			opacity: 0.3;
+			&:hover{
+				opacity: 1;
+			}
+		}
+		
+	}
+
+}
+.curs{
+	a{
+		display: inline-block;
+		width: 35px;
+		height: 35px;
+		background:#fff;
+		line-height: 35px;
+		text-align: center;
+		margin: 0 5px;
+		opacity: 0.3;
+		&.active{
+			opacity: 1;
+			color: $hover-color;
+		}
+		&:hover{
+			opacity: 1;
+		}
+	}
+}
+.links.set{
+	div{
+		cursor: pointer;
+	}
+	div:hover{
+		i{
+			color: #595959;
+		}
+		span{
+			color: #595959;
+		}
+	}
+	i{
+		line-height: 30px;
+		color: #fff;
+		font-size: 16px;
+		width: 30px;
+	}
+	span{
+		font-size: 14px;
+		text-transform: uppercase;
+		color: #fff;
+		line-height: 30px;
+	}
+
+}

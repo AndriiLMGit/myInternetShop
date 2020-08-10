@@ -1,0 +1,81 @@
+/*-----------------------------------------------------------------------------
+-	Mixins   -
+version:   	1.0.0
+date:      	23/10/15
+author:		EngoCreative
+email:     	info@engocreative.com
+website:   	http://www.engocreative.com
+-----------------------------------------------------------------------------*/
+/*3.1 Clearfix*/
+@import "mixins/clearfix";
+/*3.2 Border-radius*/
+@import "mixins/border-radius"; 
+/*3.3 Size*/
+@import "mixins/size";
+/*3.4 Help*/
+@import "mixins/help"; 
+/*3.5 Function*/ 
+@import "mixins/function";  
+/*3.6 Functions*/
+@import "mixins/functions";  
+/*3.7 Rtl*/
+@import "mixins/rtl";  
+/*3.8 Template-mixins*/
+@import "mixins/template-mixins";  
+@mixin fontIcons{
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@mixin clearfix{
+  display:block; content:"."; clear:both; font-size:0; line-height:0; height:0; overflow:hidden;
+}
+@mixin fontIcons{
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@mixin fontIcons2{
+  font-family: 'Pe-icon-7-stroke';
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@mixin trans025{
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  -ms-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+}
+@mixin trans1{
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}
+@mixin trans2{
+  -webkit-transition: all 0.75s ease;
+  transition: all 0.75s ease;
+  -moz-transition: all 0.75s ease;
+  -ms-transition: all 0.75s ease;
+  -o-transition: all 0.75s ease;
+}
+@mixin trans3{
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+}

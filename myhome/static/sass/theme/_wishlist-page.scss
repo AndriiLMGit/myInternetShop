@@ -1,0 +1,59 @@
+// ===========Wishlist page===================//
+
+.page-title.no-bg {
+
+	min-height: 0;
+
+	text-align: center;
+
+}
+
+.page-title.no-bg > .container {
+
+	position: static;
+
+	transform: none;
+
+	-moz-transform: none;
+
+	-ms-transform: none;
+
+	-webkit-transform: none;
+
+	-o-transform: none;
+
+}
+
+.page-title.no-bg .title {
+	font-size: 24px;
+	letter-spacing: 0.1em;
+	    text-transform: uppercase;
+	margin-bottom: 20px;
+	font-family: $font2;
+}
+.page-title.no-bg p{
+	font-family:$font3;
+	color: #888888;
+	line-height:24px;
+
+}
+.wishlist-in-stock{
+	font-family:$font2;
+	text-transform: uppercase;
+	line-height:16px;
+}
+// ===========Oder-complete===================//
+.oder-title{
+	font-family:$font1r;
+	font-size: 30px;
+}
+
+.track-order {
+
+	max-width: 430px;
+
+	margin: 0 auto 90px;
+
+	text-align: center;
+
+}

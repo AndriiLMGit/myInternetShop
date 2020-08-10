@@ -1,0 +1,134 @@
+.page-main-about{
+	.single-share{
+		float: left;
+	}
+	.images-img {
+		box-shadow: 0 1px 5px 0 #4a4a4a;
+	}
+	.team-members {
+        .merber {
+            overflow: hidden;
+            margin-bottom: 30px;
+            .social-member {
+                height: 58px;
+                text-align: center;
+                ul {
+                    display: block;
+                    li {
+                        display: inline-block;
+                        a {
+                            font-size: 20px;
+                            margin: 0 10px;
+                            line-height: 56px;
+                            color: #222;
+                            &.twitter:hover {
+                                color: $hover-color;
+                            }
+                            &.facebook:hover {
+                                color: $hover-color;
+                            }
+                            &.pinterest:hover {
+                                color: $hover-color;
+                            }
+                            &.behance:hover {
+                                color: $hover-color;
+                            }
+                            &.dribbble:hover {
+                                color: $hover-color;
+                            }
+                        }
+                    }
+                }
+            }
+            .title-merber {
+                height: 60px;
+                text-align: center;
+                display: block;
+                .name {
+                    font:400 18px/18px 'Montserrat';
+                    color: #373737;
+                    padding-top:15px;
+                    text-transform: uppercase;
+                }
+                .job {
+                    font:400 14px/14px 'Montserrat';
+                    color: $hover-color;
+                    padding-top:15px;
+                }
+            }
+        }
+        @include bp(min-width,768px) {
+            .merber {
+                .social-member {
+                    transform: translate3d(0px, -58px, 0px);
+                    @include transititon(0.5s);
+                }
+                .images-merber {
+                    transform: translate3d(0px, -58px, 0px);
+                    @include transititon(0.5s);
+                }
+                .title-merber {
+                    transform: translate3d(0px, -58px, 0px);
+                    @include transititon(0.5s);
+                }
+                &:hover {
+                    .social-member {
+                        transform: translate3d(0px, 0px, 0px);
+                    }
+                    .images-merber {
+                        transform: translate3d(0px, 0px, 0px);
+                    }
+                    .title-merber {
+                        transform: translate3d(0px, 0px, 0px);
+                    }
+                }
+            }
+        }
+    }
+}
+.about-title{
+    position: relative;
+	h3.title{
+		font-size: 36px;
+    padding-bottom: 10px;
+    margin: 80px 37px 45px 0;
+    border-bottom: 1px solid $border-color;
+    font-weight: 300;
+	}
+}
+.about-content-v1{
+    margin-top: 20px;
+}
+.about-content-v2 .content{
+    margin-bottom: 30px;
+    .about-title h3.title{
+        margin: 0;
+        border:none;
+        font-size: 20px;
+        margin-bottom: 15px;
+        &:before{
+            content: '';
+            width: 40px;
+            height: 1px;
+            background:#222;
+            position: absolute;
+            bottom:5px;
+        }
+    }
+    .swiper-container-horizontal > .swiper-pagination {
+        bottom: 10px;
+        right: 50px;
+        width: 100%;
+        text-align: right;
+        left:-40px;
+    }
+}
+.about-content{
+	padding-right:37px;
+	p{
+		font-family: $font3;
+		font-size: 14px;
+		color: #888888;
+		margin-bottom:3em;
+	}
+}

@@ -1,0 +1,57 @@
+{% extends 'myhome/base.html' %}
+
+{% load static %}
+
+{% block title %} Blog {% endblock %}
+
+{% block main %}
+
+<main id="maincontent" class="page-main">
+   <div class="container">
+      <div>
+         <div class="columns">
+            <div  class="site-main row">
+                {% for blog_post in blog_posts %}
+               <article class="col-sm-6 post">
+                  <div class="post-thumb light-line">
+                     <a href="{% url 'blog_post_detail' blog_post.id %}"><img src="{{ blog_post.image_blog_post.url }}" alt="QQQ"/></a>
+                  </div>
+                  <!-- .post-thumb -->
+                  <div class="post-info">
+                     <h3 class="post-title"><a href="{% url 'blog_post_detail' blog_post.id %}">{{ blog_post.title_blog_post }}</a></h3>
+                     <ul class="post-meta">
+                        <li><i class="fa fa-clock-o"></i> {{ blog_post.published_at|date:"H:i D d M Y" }}</li>
+                        <li><a href=""><i class="fa fa-comments-o"></i> {{ count_comments }}Comments</a></li>
+                        <li><i class="fa fa-thumbs-o-up"></i> 256 Likes</li>
+                     </ul>
+                     <div class="post-desc">
+                        <p>{{ blog_post.description_blog_post }}</p>
+                     </div>
+                     <!-- .post-desc -->
+                     <a href="{% url 'blog_post_detail' blog_post.id %}" class="link">Read more</a>
+                  </div>
+                  <!-- .post-info -->
+               </article>
+              {% endfor %}
+               <div class="toolbar-bottom">
+                  <div class="pagination">
+                     <ul>
+                        <li class="prev"><a href="#"><i class="fa fa-long-arrow-left"></i> Previous</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><span class="current">3</span></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><span>...</span></li>
+                        <li><a href="#">19</a></li>
+                        <li class="next"><a href="#">Next <i class="fa fa-long-arrow-right"></i></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</main>
+
+{% endblock %}

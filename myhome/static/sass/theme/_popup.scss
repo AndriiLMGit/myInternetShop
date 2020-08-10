@@ -1,0 +1,421 @@
+//
+// Modals
+// --------------------------------------------------
+
+// .modal-open      - body class for killing the scroll
+// .modal           - container to scroll within
+// .modal-dialog    - positioning shell for the actual modal
+// .modal-content   - actual modal w/ bg and corners and shit
+
+// Kill the scroll on the body
+.modal-open {
+  overflow: hidden;
+}
+
+// Container that the modal scrolls within
+.modal {
+  display: none;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  -webkit-overflow-scrolling: touch;
+
+  // Prevent Chrome on Windows from adding a focus outline. For details, see
+  // https://github.com/twbs/bootstrap/pull/10951.
+  outline: 0;
+
+  // When fading in the modal, animate it to slide down
+  &.fade .modal-dialog {
+    @include translate(0, 0,0);
+    transition-transform: 0.3s ease-out;
+  }
+  &.in .modal-dialog { @include translate(0, 0,0) }
+}
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+  background:rgba(0,0,0,0.7)
+}
+
+
+.popup{
+	text-align:center;
+	.Subcribe {
+            margin: 30px auto;
+            width: 40%;
+            height: 40px;
+            position: relative;
+            input.email {
+                width: 100%;
+                height: 40px;
+                background-color: transparent;
+                border: 1px solid #b5b5b5;
+                border-radius: 25px;
+                font-size: 1.3rem;
+                color: #FFF;
+                font-family: $font3;
+                text-indent: 7px;
+                outline: none;
+                &:focus{
+                    outline: none;
+                }
+            }
+            input.submit {
+                width: 100px;
+                height: 36px;
+                position: absolute;
+                background-color: #222;
+                border: none;
+                padding: 0;
+                border-radius: 25px;
+                top: 2px;
+                right: 2px;
+                color: #fff;
+                font-size: 1.3rem;
+                cursor: pointer;
+                font-family: $font2;
+                &:hover{
+                    background: $hover-color;
+                    color: #fff;
+                }
+            }
+        }
+}
+.popup-v1 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    .modal-dialog {
+        width: 100%;
+    }
+    .modal-full {
+        position: absolute;
+        left:0;
+        margin: 0;
+        top:100%;
+        @include transititon(0.5s);
+        @include translate(0,0,0);
+        &.showpopup {
+            @include translate(0,-290px,0);
+        }
+    }
+    .modal-content {
+        width: 100%;
+        height: 290px;
+        padding: 0;
+        background:#fff;
+        .container {
+            position: relative;
+        }
+        .modal-header {
+            line-height: 40px;
+            .close-modal a {
+                font-size: 18px;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                display: block;
+                background: #fff;
+                border-radius: 20px;
+                top:-20px;
+                right:0px;
+                color: #888;
+                position: absolute;
+                i{
+                	transition: all 0.25s ease;
+                }
+                &:hover {
+                    color: $hover-color;
+                    i{
+                    	webkit-transform: rotate(-180deg);
+					    -moz-transform: rotate(-180deg);
+					    -ms-transform: rotate(-180deg);
+					    -o-transform: rotate(-180deg);
+                    	transform: rotate(-180deg);
+                    	color: $hover-color;
+                    }
+                }
+            }
+        }
+        .modal-body{
+            .popup-content {
+                h3 {
+                    font-size: 40px;
+                    line-height: 40px;
+                    margin-top: 35px;
+                    margin-bottom: 25px;
+                    font-weight: 100;
+                    font-family: "Lora";
+                    text-transform: uppercase;
+                    color: $hover-color;
+                }
+                .des {
+                    margin-bottom: 30px;
+                    width: 570px;
+                    text-align: center;
+                    margin: 0 auto;
+                }
+            }
+        }
+        .modal-footer .again-popup {
+            margin-top: 20px;
+            margin-bottom: 0;
+        }
+    }
+}
+// 
+
+.popup-v2 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    .modal-dialog {
+    	z-index: 9999;
+    	margin: 70px auto;
+	    transform: translate(-50%, -50%);
+	    background:#fff;
+	    width: 900px;
+    }
+    .mailchimp-modal-content {
+	    background: #fff url("../images/bg-popup.jpg") no-repeat scroll right bottom;
+	    padding-bottom: 280px;
+	}
+    .modal-content {
+        min-width: 900px;
+        min-height: 530px;
+        padding: 0px;
+        .container {
+            position: relative;
+        }
+        .modal-header {
+            line-height: 40px;
+            .close-modal a {
+                font-size: 18px;
+                background:rgba(181, 181, 181, 0.26);
+                width: 40px;
+                height: 40px;
+                line-height: 37px;
+                text-align: center;
+                display: block;
+                border-radius: 20px;
+                top:5px;
+                right:5px;
+                color: #888;
+                position: absolute;
+                i{
+                	transition: all 0.25s ease;
+                }
+                &:hover {
+                    color: $hover-color;
+                    i{
+                    	webkit-transform: rotate(-180deg);
+					    -moz-transform: rotate(-180deg);
+					    -ms-transform: rotate(-180deg);
+					    -o-transform: rotate(-180deg);
+                    	transform: rotate(-180deg);
+                    	color: $hover-color;
+                    }
+                }
+            }
+        }
+        .modal-body{
+            .popup-content {
+                padding-top:1px;
+                h3 {
+                    font-size: 40px;
+                    line-height: 40px;
+                    margin-top: 80px;
+                    margin-bottom: 25px;
+                    font-weight: 100;
+                    font-family: "Lora";
+                    text-transform: uppercase;
+                    color: $hover-color;
+                }
+                .des {
+                    margin-bottom: 30px;
+                    width: 570px;
+                    text-align: center;
+                    margin: 0 auto;
+                }
+            }
+        }
+        .modal-footer .again-popup {
+            margin-top: 20px;
+            margin-bottom: 0;
+        }
+    }
+}
+.popup.quickview{
+    text-align: left;
+}
+.quickview{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    .modal-dialog {
+        z-index: 9999;
+        margin: 60px auto;
+        transform: translate(-50%, -50%);
+        background:#fff;
+        width: 1000px;
+    }
+    .modal-content {
+        padding:30px;
+        min-width: 1000px;
+        min-height: 530px;
+        padding: 0;
+        .container {
+            position: relative;
+        }
+        .modal-header {
+            line-height: 40px;
+            .close-modal a {
+                font-size: 18px;
+                background:rgba(181, 181, 181, 0.26);
+                width: 40px;
+                height: 40px;
+                line-height: 37px;
+                text-align: center;
+                display: block;
+                border-radius: 20px;
+                top:5px;
+                right:5px;
+                color: #888;
+                position: absolute;
+                z-index: 9;
+                i{
+                    transition: all 0.25s ease;
+                }
+                &:hover {
+                    color: $hover-color;
+                    i{
+                        webkit-transform: rotate(-180deg);
+                        -moz-transform: rotate(-180deg);
+                        -ms-transform: rotate(-180deg);
+                        -o-transform: rotate(-180deg);
+                        transform: rotate(-180deg);
+                        color: $hover-color;
+                    }
+                }
+            }
+        }
+        .modal-body{
+            .popup-content {
+                .product-shop{
+                    background:#fff;
+                    color: #000;
+                    padding:20px;
+                    padding-top:40px;
+                    .product-signle-options {
+                        border-bottom: 1px solid #e9e9e9;
+                        border-top: 1px solid #e9e9e9;
+                    }
+                    .product-description{
+                        color: #888;
+                    }
+                    .product-signle-options .selector-wrapper .single-option-selector {
+                        background: transparent ;
+                        // background: transparent url("../images/assets/options-arrow.png") no-repeat scroll 110px center;
+                        border: 1px solid #e9e9e9;
+                        color: #888;
+                       
+                    }
+                    .product-signle-options .selector-wrapper {
+                        display: inline-block;
+                    }
+                    .product-signle-options .selector-wrapper:first-child {
+                        margin-right: 10px;
+                    }
+                    .quantity{
+                        background:transparent;
+                        border:1px solid #e9e9e9;
+                        .qty{
+                            background:transparent;
+                            color: #000;
+                        }
+                        .minus, .plus{
+                            color: #888;
+                        }
+                    }
+                    .product-single-action {
+                        border-bottom:1px solid #e9e9e9;
+                        .selector-wrapper.size{
+                            float: left;
+                            margin-right: 30px;
+                            line-height: 40px;
+                        }
+                        .add-to-wishlist {
+                            background: transparent url("../images/assets/wishlist-white.png") no-repeat scroll center center;
+                        }
+                    }
+                    .sharing-box{
+                        float: left;
+                    }
+                    .sharing-box .social-sharing a > i {
+                        color: #222;
+                    }
+                }
+            }
+        }
+    }
+    .product-thumbnails .owl-product-thumbs .owl-nav .owl-next {
+        width: 40px;
+        height: 40px;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 0px;
+        position: absolute;
+        top: 50%;
+        opacity: 0;
+        visibility: hidden;
+        right: 0px;
+    }
+    .product-thumbnails .owl-product-thumbs .owl-nav .owl-prev {
+        width: 40px;
+        height: 40px;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 0px;
+        position: absolute;
+        top: 50%;
+        opacity: 0;
+        visibility: hidden;
+        left: 0px;
+    }
+    .product-thumbnails{
+        padding: 0 55px;    
+        .owl-product-thumbs {
+            &:hover{
+                .owl-nav .owl-prev{
+                    left: 0px;
+                    visibility: visible;
+                    opacity: 1;
+                }
+                .owl-nav .owl-next{
+                    visibility: visible;
+                    opacity: 1;
+                    right: 0px;
+                }
+
+            }
+        }
+        
+    }
+}
+@media (min-width: 1600px){
+.quickview .product-thumbnails {
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+/*quickview*/
+    .quickview {
+        .product-shop .product-signle-options .selector-wrapper .single-option-selector{
+            padding: 0 12px 0 10px;
+        }
+    } 
+}
+.popup-v2.modal-search .modal-content .modal-body .popup-content{
+    padding-top:70px;
+}

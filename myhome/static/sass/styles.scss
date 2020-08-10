@@ -1,0 +1,393 @@
+/* ################################################################# 
+    1. Bootstrap
+    2. Var
+    3.Mixins
+			3.1 Clearfix 
+			3.2 Border-radius 
+			3.3 Size 
+			3.4 Help	
+			3.5 Function
+			3.6 Functions
+			3.7 Rtl
+			3.8 Template-mixins	
+    
+    4.Base
+    5.Element
+            5.1 Deal
+			5.2 Slideshow  
+			5.3. Tabs 
+			5.4 Home-banner-img
+			5.5 Testimonial
+			5.6 Brand
+			5.7 Promotion 
+			5.8 Collection
+			5.9 Carousel-product
+			5.10 Lattest-blog
+			5.11 New-sale-rate
+			5.12 Minicart
+			5.13 Parallax 
+	6.Theme
+			6.1 Reset  
+			6.2 Grid-layout
+			6.3 Base  
+			6.4 Header 
+			6.5 Main-content 
+			6.6 Footer
+			6.7 Sidebar
+			6.8 Wishlist-page
+			6.9 Blog
+			6.10 About
+			6.11 Contact
+			6.12 Loginregister
+			6.13 404
+			6.14 Faq
+			6.15 Popup
+            6.16 Menu-version
+    7.Ecommerce 
+			7.1 Product-item
+			7.2 Product-detail
+			7.3 Checkout
+			7.4 Cart 
+    
+################################################################# */
+/*1. Bootstrap*/
+@import "bootstrap";
+/*2. var*/
+@import "var";
+/*3. Mixins*/
+@import "mixins";
+/*4. Base*/
+@import "base";
+/*5. Elements*/
+@import "elements";
+/*6.Theme*/
+@import "theme";
+/*7. Ecommerce*/
+@import "ecommerce";
+
+
+
+
+//public css
+button.button{
+	width: auto;
+	font-weight: bold;
+	font-size: 14px;
+	color: #FFF;
+	height: 40px;
+	text-transform: uppercase;
+	background: #FF5556 none repeat scroll 0% 0%;
+	padding: 0px 27px;
+	border: 0px none;
+	cursor: pointer;
+}
+input{
+	margin-bottom: 10px;
+	height: 40px;
+	border: 1px solid #b5b5b5;
+	
+	color: #b5b5b5;
+	padding-left:10px;
+	font-size: 14px;
+	font-family: $font3;
+				
+
+}
+input[text]{
+	width: 100%;
+}
+.btn-lg{
+	border-radius:0px!important;
+}
+.btn{
+	border-radius:0px;
+}
+.quantity{
+	background: #212121;
+	height: 35px;
+	width: 80px;
+	line-height: 33px;
+	position: relative;
+	display: inline-block;
+	border: 1px solid rgba(255,255,255,0.4);
+	.qty{
+		width: 100%;
+		border: medium none;
+		height: 33px;				
+		padding: 0px ;
+		text-align: center;
+		color: #fff;
+		font-size: 14px;
+		background: #212121;
+		-webkit-moz-appearance: none;
+		-moz-moz-appearance: none;
+		-ms-moz-appearance: none;
+		-o-moz-appearance: none;
+		moz-appearance: none;
+	}
+	.minus{
+		
+		position: absolute;
+		display: block;
+		height: 100%;
+		color: rgba(255,255,255,0.4);
+		width: 20px;
+		text-align: center;
+		top: 0px;
+		left: 5px;
+		cursor: pointer;
+	}
+	.plus{
+		position: absolute;
+		display: block;
+		height: 100%;
+		width: 20px;
+		color: rgba(255,255,255,0.4);
+		text-align: center;
+		top: 0px;
+		right: 5px;
+		cursor: pointer;
+	}
+}
+.box-title{
+	
+	text-align: center;
+		.h3-title{
+			font-size: 30px;
+			font-family: $font2;
+			word-spacing: 1px;
+			color: #373737;
+			font-weight: normal;
+			&.small{
+				font-size: 24px;
+			}
+		}
+		.title-icon{
+			display: inline-block;
+			margin: 5px 0px 30px;
+		}
+	}
+
+.table > tbody > tr > td, 
+.table > tbody > tr > th, 
+.table > tfoot > tr > td, 
+.table > tfoot > tr > th, 
+.table > thead > tr > td, 
+.table > thead > tr > th {
+border-top: none;
+border-bottom: 1px solid #e9e9e9;
+padding: 10px;
+vertical-align: middle;
+}
+.table > tbody > tr > th,
+.table > tfoot > tr > th, 
+.table > thead > tr > th {
+font-size: 18px;
+color: #212121;
+text-transform: uppercase;
+font-family: 'Montserrat', sans-serif;
+padding-bottom: 15px;
+}
+
+// select box
+.selectbox {
+
+	border: 1px solid #b5b5b5;
+
+	position: relative;
+
+	height: 40px;
+	margin-bottom: 15px;
+
+}
+
+
+.selectbox select {
+
+	border: none;
+
+	width: 100%;
+
+	background: none;
+
+	position: relative;
+
+	z-index: 1;
+
+	outline: none;
+
+	color: #b5b5b5;
+
+	letter-spacing: 0.5px;
+
+	padding: 0 15px;
+
+	height: 38px;
+
+	font-weight: normal;
+
+	font-family: 'Raleway', sans-serif;
+
+}
+
+.selectbox select option {
+
+	padding: 5px 10px;
+
+	border: none;
+
+	text-align: left;
+
+}
+
+.selectbox.medium {
+
+	height: 35px;
+
+}
+
+.selectbox.medium select {
+
+	height: 33px;
+
+	padding: 0 10px;
+
+}
+
+// 
+.checkbox input {
+
+	margin: 0 !important;
+
+	display: none;
+
+}
+
+
+
+.checkbox label {
+
+	display: inline-block;
+
+	vertical-align: middle;
+
+	font-weight: normal;
+
+	text-transform: none;
+
+	font-family: 'Raleway', sans-serif;
+
+	position: relative;
+
+	padding-left: 30px;
+
+}
+
+.checkbox label:before {
+
+	display: block;
+
+	width: 20px;
+
+	height: 20px;
+
+	border: 1px solid #b5b5b5;
+
+	content: "";
+
+	position: absolute;
+
+	left: 0;
+
+	top: 50%;
+
+	transform: translateY(-50%);
+
+	-moz-transform: translateY(-50%);
+
+	-ms-transform: translateY(-50%);
+
+	-webkit-transform: translateY(-50%);
+
+	-o-transform: translateY(-50%);
+
+}
+
+.checkbox input:checked + label:after {
+
+	content:"\f00c";
+
+	font-family: FontAwesome;
+
+	font-size: 16px;
+
+	color: #212121;
+
+	position: absolute;
+
+	top: 50%;
+
+	left: 2px;
+
+	transform: translateY(-50%);
+
+	-moz-transform: translateY(-50%);
+
+	-ms-transform: translateY(-50%);
+
+	-webkit-transform: translateY(-50%);
+
+	-o-transform: translateY(-50%);
+
+}
+
+.input-field {
+
+	padding-bottom: 10px;
+
+}
+
+.input-field .input-text,
+
+.input-field .selectbox,
+
+.input-field textarea {
+
+	width: 100%;
+
+	margin-bottom: 15px;
+
+}
+
+.input-field .checkbox label {
+
+	text-transform: none;
+
+	font-weight: normal;
+
+	font-family: "Raleway",sans-serif;
+
+}
+
+.input-field label {
+
+    color: #212121;
+
+    display: block;
+
+    font-family: "Montserrat",sans-serif;
+
+    font-weight: normal;
+
+    margin-bottom: 7px;
+
+    text-transform: uppercase;
+
+	}
+a{
+	text-decoration: none!important;
+	&:hover{
+		color: #ff5556!important;
+	}
+}
+@import "responsive";

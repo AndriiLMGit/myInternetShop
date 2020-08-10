@@ -1,0 +1,191 @@
+.contact .single-share{float:left;
+    .social ul li a {
+        margin: 0 20px 0 0px;
+    }
+}
+.contact.contact-v2 {
+    .info-contact-v2{
+        ul{
+            li{
+                font-weight: 100;
+                font-family: 'Raleway', sans-serif;
+                margin-bottom: 20px;
+                span{
+                    color: #000;
+                    font-weight: 500;
+                    font-family:  $font2;
+                }
+            }
+        }
+    }
+    .contact-form .button{
+        width: 20%;
+    }
+}
+.content-contact {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    .item-contact {
+        padding: 0 50px;
+        img {
+            display: block;
+            margin:0 auto;
+        }
+        h2.title {
+            font:400 18px/18px  $font2;
+            margin-top:30px;
+            margin-bottom: 10px;
+            color: #222;
+        }
+        h4.des {
+            font:300 14px/24px  $font2;
+            color: #888888;
+            margin-bottom: 20px;
+        }
+        span {
+            font:400 14px  $font2;
+             color: $hover-color;
+        }
+    }
+}
+.title-contact {
+    margin-top: 0;
+    font:700 20px/20px  'Raleway';;
+    color: #222;
+    text-align: center;
+    position: relative;
+    padding-bottom: 45px;
+    margin-bottom: 0;
+    &:after {
+        content: "";
+        background: $hover-color;
+        display: block;
+        width: 50px;
+        height: 2px;
+        position: absolute;
+        left:50%;
+        margin-left: -25px;
+        bottom: 35px;
+    }
+}
+.title-contact-v2{
+    margin-top: 0;
+    font:700 20px/20px  'Raleway';;
+    color: #222;
+    text-align: left;
+    position: relative;
+    padding-bottom: 45px;
+    margin-bottom: 0;
+    &:after {
+        content: "";
+        background: $hover-color;
+        display: block;
+        width: 50px;
+        height: 2px;
+        position: absolute;
+        left:0;
+        bottom: 35px;
+    }
+}
+.contact-form {
+    margin-bottom: 100px;
+    .input-field .input-text {
+        height: 40px;
+        text-indent: 20px;
+        font:400 14px  'Raleway';
+        color: #b5b5b5;
+        margin-bottom: 30px;
+        border: 1px solid #b5b5b5;
+    }
+    textarea {
+        text-indent: 20px;
+        width: 100%;
+        border: 1px solid #b5b5b5;
+        font:400 14px  'Raleway';
+        color: #b5b5b5;
+        padding-top: 10px;
+        margin-bottom: 30px;
+    }
+    .button {
+        width: 100%;
+        text-align: center;
+        background: $hover-color;
+        // border-radius: 20px;
+        @include transititon(0.3s);
+        a {
+            color: #fff;
+            font:700 14px/40px  $font2;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        &:hover {
+            background:  $hover-color;
+        }
+    }
+}
+.contact-map #map-canvas {
+    height: 500px;
+}
+#map-canvas {
+    margin: 0;
+    padding: 0;
+    height: 340px;
+    max-width: none;
+    -webkit-box-shadow: inset 0px 8px 25px 0px rgba(181,181,181,0.6);
+    -moz-box-shadow: inset 0px 8px 25px 0px rgba(181,181,181,0.6);
+    box-shadow: inset 0px 8px 25px 0px rgba(181,181,181,0.6);
+}
+.contact-map #map-canvas {
+    height: 500px;
+}
+.contact-map{margin-bottom:100px;}
+#map-canvas img {
+    width: 95%;
+}
+.gm-style-iw {
+    width: 585px !important;
+    top: 10px !important;
+    left: 0px !important;
+    background-color: #fff;
+    box-shadow: 0 1px 6px rgba(178, 178, 178, 0.6);
+    border-radius: 4px 4px 4px 4px;
+    > div {
+        width: 585px !important;
+    }
+}
+#iw-container {
+    padding: 20px 0;
+    .img-map {
+        width: 154px;
+        display: block;
+        float: left;
+        border-right: 1px solid #d3d3d3;
+        text-align: center;
+    }
+    .content-map {
+        width: 410px !important;
+        overflow: hidden;
+        text-align: left;
+        padding-left: 25px;
+        .addres-map {
+            font:400 15px $font2;
+            color: #212121;
+        }
+        .map-contact {
+            width: 100%;
+            font:400 13px $font2;
+            color: #b4b4b4;
+            span {
+                color: $hover-color;
+            }
+            .phone-map {
+                display: inline-block;
+                margin-right: 35px;
+            }
+            .email-map {
+                display: inline-block;
+            }
+        }
+    }
+}

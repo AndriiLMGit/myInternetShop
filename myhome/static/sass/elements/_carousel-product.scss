@@ -1,0 +1,119 @@
+// Home-product-tab
+.carousel-product, .tabs-collection ,.owl-product-thumbs {
+	text-align: center;
+	margin-bottom: 50px;
+	.product-item{
+		margin-bottom: 40px;
+	}
+	&:hover{
+		.owl-nav{
+			div{
+				display: block!important;
+				opacity: 1!important;
+				visibility: visible!important;
+				&.owl-prev{
+					left: -20px;
+				}
+				&.owl-next{
+					right: -20px;
+				}
+			}
+		}
+	}
+	.container{
+		position: relative;
+
+	}	
+
+	// slide product
+	.owl-nav{
+
+		@mixin owl{
+			width: 70px;
+			height: 40px;
+			background-color: #888888;
+			border-radius: 25px;
+			display: block;
+			font-size: 0;
+			position: absolute;
+			top: 30%;
+			margin-top: -20px;
+			padding: 0;
+			cursor: pointer;
+			-webkit-transition: all 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+			-o-transition: all 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+			transition: all 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+			opacity: 0;
+			visibility: hidden;
+			&:hover{
+				background-color: #000000;
+			}
+			&:before{
+				@include fontIcons;
+				font-size: 18px;
+				color: #fff;
+				line-height: 40px;
+
+			}
+			&.disabled{
+
+				&:hover{
+					background-color: #888888;
+				}
+			}
+		}
+		.owl-prev{
+			@include owl;
+			left: 30px;		
+			&:before{
+				content: '\f177';
+			}    
+		}
+		.owl-next{
+			@include owl;
+			right: 30px;	
+			&:before{
+				content: '\f178';
+			}  	    
+		}
+	}
+// end slide product
+.row-6-items{
+	&.slide-full-screen{
+		margin: 0 66px;
+	}
+}
+}
+// End carousel-product
+
+.carousel-section{
+	padding: 0 115px;
+	.box-title .h3-title{
+		margin-top: 70px;
+	}
+	.box-title .title-icon{
+		margin:5px 0px 20px;
+	}
+	.col-sm-6{
+		padding: 0;
+	}
+
+	.carousel-product .product-item{
+		margin-bottom: 0;
+	}
+	
+	.product-item .product-name{
+		font-size: 18px;
+	}
+	.carousel-product:hover .owl-nav div.owl-prev{
+		left: -35px;
+	}
+	.tabs-collection:hover .owl-nav div.owl-next{
+		right: -35px;
+	}
+	@media(max-width: 1440px){
+		.box-title .h3-title{
+			margin-top: 30px;
+		}
+	}
+}

@@ -1,0 +1,15 @@
+{% extends 'myhome/base.html' %}
+
+{% load static %}
+
+{% block main %}
+
+  <form class="comment-form margin-bottom-70" id="commentform" method="post" action="" >
+                                  {% csrf_token %}
+                                  {{ form.as_p }}
+                                  <p class="form-submit">
+                                    <input type="submit" value="Залишити коментар" class="btn btn-lg btn-primary" id="submit">
+                                 </p>
+                              </form>
+
+{% endblock %}

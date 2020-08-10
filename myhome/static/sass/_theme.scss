@@ -1,0 +1,35 @@
+/*-----------------------------------------------------------------------------
+		THEME.SCSS
+-----------------------------------------------------------------------------*/
+/*6.1 Reset*/
+@import "theme/reset";  
+/*6.2 Grid-layout*/  
+@import "theme/grid-layout";
+/*6.3 Base*/
+@import "theme/base";
+/*6.4 Header*/
+@import "theme/header";
+/*6.5 Main-content*/
+@import "theme/main-content";
+/*6.6 Footer*/
+@import "theme/footer";
+/*6.7 Sidebar*/
+@import "theme/sidebar";
+/*6.8 Wishlist-page*/
+@import "theme/wishlist-page";
+/*6.9 Blog*/
+@import "theme/blog";
+/*6.10 About*/
+@import "theme/about";
+/*6.11 Contact*/
+@import "theme/contact";
+/*6.12 Loginregister*/
+@import "theme/loginregister";
+/*6.13 404*/
+@import "theme/404";
+/*6.14 Faq*/
+@import "theme/faq";
+/*6.15 Popup*/
+@import "theme/popup";
+/*6.16 Menu-version*/
+@import "theme/menu-version";

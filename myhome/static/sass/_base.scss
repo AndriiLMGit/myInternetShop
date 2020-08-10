@@ -1,0 +1,158 @@
+.btn {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    border-radius: 0;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    border: solid 1px rgba(0,0,0,0);
+    background: none;
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
+
+    &.btn-xs {
+        font-size: 10px;
+        padding: 3px 7px;
+    }
+
+    &.btn-sm {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    &.btn-lg {
+        font-size: 12px;
+        padding: 12px 25px;
+        letter-spacing: 1px;
+    }
+
+    &.btn-arrow {
+        padding: 7px 8px;
+
+        &.btn-sm {
+            padding: 7px 9px;
+        }
+
+        &.slick-disabled {
+            opacity: 0.5;
+        }
+    }
+}
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.btn-default {
+ margin-left: 15px;
+ font-weight: bold;
+ text-transform: uppercase;
+ color: #FF5556;
+ border: 1px solid #FF5556;
+ height: 40px;
+ border-radius: 0px;
+ line-height: 38px;
+ cursor: pointer;
+ background: transparent none repeat scroll 0% 0%;
+ padding: 0px 20px;
+
+ &:hover,
+ &:focus {
+
+ }
+
+ 
+}
+.btn-outline {
+    color: #333;
+    border:1px solid #333333;
+    &:hover{
+        color: #fff;
+    border:1px solid $hover-color;
+    background: $hover-color;
+    }
+
+}
+.btn-primary {
+    border: 1px solid $hover-color;
+    background: $hover-color;
+    color: #fff;
+    &:hover{
+       border: 1px solid $hover-color;
+       background: #fff;
+       color: $hover-color;;
+   }
+}
+
+.btn-info {
+
+}
+
+.btn-success {
+
+}
+
+.btn-danger {
+
+}
+
+.btn-warning {
+
+}
+
+.btn-dark {
+
+}
+
+.btn-white {
+
+}
+.btn-radius{
+    border-radius: 20px;
+}
+
+// 
+.dropdown{
+    position: relative;
+}
+.dropdown-content{
+    opacity: 0;
+    position: absolute;
+    top: 74px;
+    min-width: 310px;
+    right: -23px;
+    background: #212121;
+    z-index: 9999;
+    padding: 15px;
+    visibility:hidden;
+    @include trans025;
+    &.active{
+        opacity: 1;
+        top: 64px;
+        visibility: visible;
+    }
+    &:before{
+        content: '';
+        top: -11px;
+        border-bottom: 11px solid #212121;
+        border-left: 11px solid transparent;
+        border-right: 11px solid transparent;
+
+        position: absolute;
+        right: 9%;
+    }
+
+    
+    
+}
+.margin-top-0{
+    margin-top: 0!important;
+}
+.margin-bottom-0{
+    margin-bottom: 0!important;
+}

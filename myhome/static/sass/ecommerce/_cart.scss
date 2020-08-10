@@ -1,0 +1,458 @@
+/*-----------------------------------------------------------------------------
+-	Cart page  -
+version:   	1.0.0
+date:      	23/10/15
+author:		EngoCreative
+email:     	info@engocreative.com
+website:   	http://www.engocreative.com
+-----------------------------------------------------------------------------*/
+.shopping-cart{
+	.breadcrumbs{
+		background: #bcbcbc;
+		.item.cart::before{
+			color: rgba(33,33,33,0.5);
+		}
+	}
+}
+.cart-collaterals {
+
+	padding: 60px 0;
+
+}
+
+.cart-collaterals h3 {
+
+	font-size: 20px;
+
+	font-weight: bold;
+
+	text-transform: uppercase;
+
+	color: #212121;
+
+	margin-bottom: 30px;
+
+	letter-spacing: 1px;
+
+}
+// cart action
+.cart-actions {
+
+	padding: 65px 0 100px;
+
+	border-top: 1px solid #e9e9e9;
+
+}
+
+.cart-actions .cart-input {
+
+	margin-right: 15px;
+
+	width: 100%;
+
+	max-width: 400px;
+
+}
+
+.cart-actions .button {
+
+	margin-left: 15px;
+
+}
+
+
+// shop step
+.shop-step {
+	padding-top: 60px;
+	padding-bottom: 70px;
+
+}
+
+.shop-step ul {
+
+	margin: 0;
+
+	padding: 0;
+
+	list-style: none;
+
+}
+
+.shop-step ul li {
+
+	float: left;
+
+	width: 33.3333%;
+
+	text-align: center;
+
+	font-family: 'Montserrat', sans-serif;
+
+}
+
+.shop-step ul li.checked:after {
+
+	display: inline-block;
+
+	content: "";
+
+	width: 80px;
+
+	height: 2px;
+
+	background: $hover-color;
+
+	vertical-align: top;
+
+}
+
+.shop-step .count {
+
+	display: inline-block;
+
+	width: 70px;
+
+	height: 70px;
+
+	border: 1px solid #212121;
+
+	text-align: center;
+
+	line-height: 68px;
+
+	color: #212121;
+
+	font-size: 25px;
+
+	border-radius: 50%;
+
+	-moz-border-radius: 50%;
+
+	-ms-border-radius: 50%;
+
+	-webkit-border-radius: 50%;
+
+	-o-border-radius: 50%;
+
+}
+
+.shop-step ul li.checked .count {
+
+	background: $hover-color;
+
+	border-color: $hover-color;
+	color: #fff;
+
+}
+
+.shop-step .label {
+
+	color: #212121;
+
+	font-size: 18px;
+
+	text-transform: uppercase;
+
+	font-weight: normal;
+
+	display: block;
+
+	padding: 25px 0;
+
+	line-height: normal;
+
+	border-radius: 0;
+
+}
+
+
+/* --------------------------
+
+	8.5 Shop Cart
+
+--------------------------- */
+
+
+.cart-form {
+	.quantity{
+		border: 1px solid #bcbcbc;
+		.qty{
+			background: #fff;
+			color: #bcbcbc;
+
+		}
+		.minus{
+			color: #bcbcbc;
+		}
+		.plus{
+			color: #bcbccb;
+		}
+	}
+	table {
+		width: 100%;
+		tr{
+			border-bottom: 1px solid #e9e9e9;
+		}
+		th {
+			text-align: center;
+		}
+		td {
+			vertical-align: middle;
+			text-align: center;
+		}
+		.remove {
+			font-size: 20px;
+			color: #b5b5b5;
+			&:hover{
+					color: #FBF063;				
+			}
+		}
+	}
+	.product-name{
+		float: left;
+	}
+	.product-name-ct a{
+		font-size: 20px;
+		text-align: left;
+		font-family: $font1;
+		color: #212121;
+		color: #373737;	
+	}
+	.product-img {	
+				
+		&.title{
+			font-family: $font2;
+		}
+		a{
+			color: #373737;	
+			span{
+				line-height: 135px;
+
+			}
+		}
+		img{
+			width: 100px;
+			height: auto;
+			float: left;
+			margin-right: 25px;
+		}
+	}
+	.product-remove {
+		text-align: center;
+	}
+	.price {
+		font-size: 20px;
+	}
+}
+
+.cart-input {
+	margin-bottom: 25px;
+	input {
+		width: 100%;
+		height: 40px;
+	}
+}
+
+
+.cal-shipping .selectbox select option {
+
+	padding: 5px 15px;
+
+}
+
+.cart-collaterals .input-submit input {
+
+	font-weight: bold;
+
+	text-transform: uppercase;
+
+	color: $hover-color;
+
+	border: 1px solid $hover-color;
+
+	height: 40px;
+
+	border-radius: 0;
+
+	background: none;
+
+	padding: 0 20px;
+
+}
+
+.cart-collaterals .input-submit input:hover {
+
+	background: $hover-color;
+	color: #fff;
+
+}
+
+.cal-shipping table {
+
+	width: 100%;
+
+}
+
+.cal-shipping table td,
+
+.cal-shipping table th {
+
+	padding: 32px 20px 5px;
+
+	border-bottom: 1px solid #e9e9e9;
+
+	color: #212121;
+
+}
+
+.cal-shipping table tr:first-child td,
+
+.cal-shipping table tr:first-child th {
+
+	padding-top: 5px;
+
+}
+
+.cal-shipping table tr.order-total td,
+
+.cal-shipping table tr.order-total th {
+
+	padding: 26px 0 0;
+
+	border: none;
+
+	vertical-align: top;
+
+	div{
+		background: $hover-color;
+		color: #fff;
+	}
+
+}
+
+.cal-shipping table th {
+
+	font-family: 'Montserrat', sans-serif;
+
+	font-size: 16px;
+
+	text-transform: uppercase;
+
+}
+
+.cal-shipping table td {
+	text-align: right;
+	font-size: 18px;
+	font-weight: normal;
+	font-family: $font3;
+	color: #373737;
+
+}
+
+.cal-shipping table .amount {
+
+	font-family: 'Montserrat', sans-serif;
+	color: #fff;
+	font-weight: normal;
+	font-size: 20px;
+
+}
+
+.cal-shipping .black-bg {
+
+	line-height: 40px;
+
+	padding: 0 20px;
+
+	height: 40px;
+
+}
+
+.cart-actions {
+
+	padding: 65px 0 100px;
+
+	border-top: 1px solid #e9e9e9;
+
+}
+
+.cart-actions .cart-input {
+
+	margin-right: 15px;
+
+	width: 100%;
+
+	max-width: 400px;
+
+}
+
+.cart-actions .button {
+	margin-left: 15px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #FF5556;
+	border: 1px solid #FF5556;
+	height: 40px;
+	border-radius: 0px;
+	line-height: 38px;
+	cursor: pointer;
+	background: transparent none repeat scroll 0% 0%;
+	padding: 0px 20px;
+	&:hover{
+		background: $hover-color;
+		color: #fff;
+	}
+	&.update-cart{
+		background: $hover-color;
+		color: #fff;
+	}
+
+}
+table td.actions .coupon{
+	float:left;
+	label{
+		display: none;
+	}
+	.input-text{
+		float: left;
+		border: 1px solid #d3ced2;
+		padding:6px 6px 5px;
+		margin: 0 4px 0 0;
+		line-height: 1;
+	}
+	.coupon-input-text{
+		padding-left:0;
+		.input-text{
+			width: 100% !important;
+			height: 40px !important;
+		}
+	}
+	
+	
+}
+table td.actions {
+		padding-top:30px;
+		.update-cart-btn{
+			float: right!important;
+		}
+		.btn-primary-border {
+	    border: 1px solid #fe5555;
+	    background: #FFF;
+	    color: #fe5555;
+	    font-family: "Montserrat";
+	    font-weight: bold;
+	    text-transform: uppercase;
+	    height: 40px;
+	    border-radius: 0;
+	    background: none;
+	    padding: 0 20px;
+	}
+	.btn{
+		border-radius:0px;
+		float: right!important;
+	}
+	.btn-lg{
+		border-radius:0px;
+	}
+	
+}

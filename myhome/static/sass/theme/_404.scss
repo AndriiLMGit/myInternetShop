@@ -1,0 +1,72 @@
+.page-not-found{
+	margin:80px 0;
+	text-align:center;
+	.page-404-content{
+		font-size: 36px; 
+		display: block;
+		text-align: center;
+		font-family: 'Montserrat';
+		text-transform: uppercase;
+		padding-top: 200px;
+		background:transparent url(../images/404.png) no-repeat scroll center top;
+		font-weight: bold;
+		background-size: 410px 162px;
+		padding-bottom:15px;
+	}
+	p{
+		font-size: 18px;
+		color:#373737;
+		font-weight: 100;
+	}
+	.form-search{
+		position: relative;
+		text-align:center;
+		display: table;
+		// float: left;
+		width: 60%;
+		margin: 60px auto;
+		.input-search{
+			background: transparent;
+			height: 38px;
+			width: 100%;
+			font-weight: 100;
+			margin-top: 10px;
+			line-height: 25px;
+			color: #373737;
+			font-family: $font2;
+			// text-transform: uppercase;
+			padding: 0 10px 0 13px;
+			font-size: 11px;
+			letter-spacing: 0.1rem;
+			border:1px solid #b5b5b5;
+			&::-webkit-input-placeholder { color:#e5e5e5; }
+
+
+		}
+		.btn-search{
+			position: absolute;
+			display: inline-block;
+			right: 15px;
+			top: 15px;
+			line-height: 26px;
+			font-size: 0;
+			&:before{
+				@include fontIcons;
+				content: '\f002';
+				font-size: 14px;
+				color: #b5b5b5;
+			}
+			.btn-search1{
+				position: absolute;
+				display: inline-block;
+				left: 0px;
+				width: 26px;
+				height: 26px;
+				font-size: 0;
+				opacity: 0;
+				z-index: 2;
+				cursor: pointer;
+			}
+		}
+	}
+}

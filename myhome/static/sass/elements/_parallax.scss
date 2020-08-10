@@ -1,0 +1,30 @@
+
+.background-img-v4{
+	background-image: url("../images/testimonial3.jpg") !important;
+	z-index:1;
+}
+.background-img-v3{
+	background-image: url("../images/paralax2.png") !important;
+	z-index:1;
+}
+
+.parallax {
+  	background-size: cover;
+  	background-attachment: fixed;
+  	background-position: center center;
+  	position: relative;
+  	min-height: 500px;
+  	// background-image: url("../images/testimonial3.jpg") !important;
+	// background-image: $engo-parallax-before-background;
+	&:before{
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		z-index: -1;
+		content: " ";
+		height: 100%;
+		text-align: center;
+		position: absolute;
+		background: rgba(33,33,33,0.9);
+	}       
+}
