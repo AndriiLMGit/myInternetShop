@@ -1,6 +1,16 @@
 {% extends 'myhome/base.html' %}
 
 {% load static %}
+{% load social_share %}
+{% block breadcrumbs%}
+<li class="item cart">
+<a href="{% url 'blog_posts'%}" style="{{ gray_color }}">Blog</a>
+</li>  
+<li class="item cart">
+   <a href="{% url 'blog_post_detail' post.id %}">{{ post.title_blog_post }}</a>
+</li>     
+{% endblock breadcrumbs %}
+
 
 {% block title %} {{ post.title_blog_post }} {% endblock %}
 
@@ -22,9 +32,10 @@
                               <h3 class="post-title"><a href="#">{{ post.title_blog_post }}</a></h3>
                               <ul class="post-meta">
                                  <li><i class="fa fa-clock-o"></i> {{ post.published_at|date:"H:i D d M Y" }}</li>
-                                 <li><a href=""><i class="fa fa-comments-o"></i> {{ count_comments }} Comments</a></li>
-                                 <li><i class="fa fa-thumbs-o-up"></i> 256 Likes</li>
-                              </ul>
+                                 <li><a href=""><i class="fa fa-comments-o"></i> {{ post.comments.count }} Comments</a></li>
+                                 <li><i class="fa fa-thumbs-o-up"></i> Likes</li>
+                                 <!-- <li><i class="fa fa-thumbs-o-down"></i> Dislikes</li> -->
+                              </ul>                    
                               <div class="post-desc">
                                  <p>{{ post.description_blog_post }}</p>
                                  <!--<div>
@@ -55,11 +66,23 @@
                                  <strong>SHARE THIS:</strong>
                                  <div class="social">
                                     <ul>
-                                       <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                                       <li><a href="#" target="_blank"><i class="fa fa-pinterest"></i></a></li>
-                                       <li><a href="#" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
-                                       <li><a href="#" target="_blank"><i class="fa fa-behance"></i></a></li>
-                                       <li><a href="#" target="_blank"><i class="fa fa-dribbble"></i></a></li>
+                                      <li>
+                                        <a href="#" target="_blank">
+                                          <i class="fa fa-facebook-square"></i>
+                                        </a>
+                                      </li>
+                                       <li>
+                                         <a href="#" target="_blank">
+                                           <i class="fa fa-twitter"></i>
+                                         </a>
+                                       </li>
+                                       <li>
+                                         <a href="#" target="_blank">
+                                           <i class="fa fa-pinterest"></i>
+                                         </a>
+                                       </li>
+                                       <!--<li><a href="#" target="_blank"><i class="fa fa-behance"></i></a></li>
+                                       <li><a href="#" target="_blank"><i class="fa fa-dribbble"></i></a></li>-->
                                     </ul>
                                  </div>
                               </div>
@@ -76,7 +99,7 @@
                         </article>
                         <div class="comments-area" id="comments">
                           {% if comments %}
-                           <h3 class="comments-title widget-title mb-4">КОМЕНТАРІ ( {{count_comments}} )</h3>
+                           <h3 class="comments-title widget-title mb-4">КОМЕНТАРІ ( {{ post.comments.count }} )</h3>
                            <ol class="comment-list">
                               <!-- .comment -->
                               {% for comment in comments %}
@@ -90,7 +113,7 @@
                                        <cite class="comment-author"><span><a class="url" rel="external nofollow" href="#">{{ comment.name }}</a></span></cite>
                                        <div class="action-link">
                                           <a>{{ comment.created|date:"H:i - D d M Y" }}</a> /
-                                          <a href="#" class="comment-reply-link" data-toggle="modal" type="button" data-target="#exampleModal">Reply</a> /
+                                          <a href="#" class="comment-reply-link" role="button">Reply</a> /
                                           <a href="{% url 'edit_comment' comment.id %}" class="comment-repost">Edit</a> /
                                           <a href="{% url 'delete_comment' comment.id %}" class="comment-repost">Delete</a>
                                        </div>
@@ -104,7 +127,7 @@
                                  </div>
                                  <!-- .comment-body -->
                                  <ol class="children">
-                                   {% for replay in comment.replies.all %}
+                                   {% for reply in comment.replies.all %}
                                     <!-- .comment -->
                                     <li class="comment">
                                        <div class="comment-body">
@@ -113,17 +136,18 @@
                                           </div>
                                           <!-- .comment-avatar -->
                                           <header class="comment-meta">
-                                             <cite class="comment-author"><span><a class="url" rel="external nofollow" href="#">{{ replay.name }}</a></span></cite>
+                                             <cite class="comment-author"><span><a class="url" rel="external nofollow" href="#">{{ reply.name }}</a></span></cite>
                                              <div class="action-link">
-                                                <a>{{ replay.created }}</a> /
-                                                <a href="#" class="comment-repost">Repost</a> /
-                                                <a href="#" class="comment-reply-link">Reply</a>
+                                                <a>{{ reply.created|date:"H:i D d M Y" }}</a> /
+                                                <a href="#" class="comment-repost">Edit</a> /
+                                                <a href="" class="comment-repost">Delete</a> /
+                                                <a href="" class="comment-reply-link">Reply</a>
                                              </div>
                                              <!-- .action-link -->
                                           </header>
                                           <!-- .comment-meta -->
                                           <div class="comment-content comment">
-                                             <p>{{ replay.body }}</p>
+                                             <p>{{ reply.body }}</p>
                                           </div>
                                           <!-- .comment-content -->
                                        </div>
@@ -132,13 +156,38 @@
                                     <!-- .comment -->
                                     {% endfor %}
                                  </ol>
-                                  <!--<form method="post" class="comment-form">
-                                               {{ comment_form }}
-                                               {% csrf_token %}
-                                               <!-- Hidden input for parent comment.id -->
-                                               <!--<input type="hidden" name="parent_id" value="{{ comment.id }}">
-                                               <input class="btn btn-primary" type="submit" value="Replay">
-                                           </form>-->
+                                  <form method="post" class="comment-form comment-form-hide">
+                                     {% csrf_token %}
+                                     <!-- Hidden input for parent comment.id -->
+                                     <input type="hidden" name="parent_id" value="{{ comment.id }}">
+                                     <div class="row">
+                                    <div class="col-md-4">
+                                      <p class="comment-form-author">
+                                        <!-- <label for="id_name">Ваше ім'я:</label> -->
+                                        <input type="text" name="name" maxlength="80" required="" id="id_name" placeholder="Ваше ім'я *">
+                                      </p>
+                                    </div>
+                                    <div class="col-md-4">
+                                      <p class="comment-form-email">
+                                        <!-- <label for="id_email">Email:</label> -->
+                                        <input type="email" name="email" maxlength="254" required="" id="id_email" placeholder="Ваш Email *">
+                                      </p>
+                                    </div>
+                                    <div class="col-md-4">
+                                      <p class="comment-form-phone">
+                                        <!-- <label for="id_phone_number">Номер телефону:</label> -->
+                                        <input type="text" name="phone_number" maxlength="12" required="" id="id_phone_number" placeholder="Ваше номер телефону *">
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <p class="comment-form-comment">
+                                    <!-- <label for="id_body">Повідомлення:</label> -->
+                                    <textarea name="body" cols="40" rows="10" required="" id="id_body" aria-required="true" placeholder="Ваше повідомлення *" id="comment" style="padding: 10px; border-color: #b5b5b5; border-radius: 2px; color: #b5b5b5;"></textarea>
+                                  </p>
+                                  <p class="form-submit">
+                                    <input type="submit" value="Відповісти" class="btn btn-lg btn-primary" id="submit">
+                                 </p>
+                                 </form>
                               </li>
                               {% endfor %}
                               {% endif %}
@@ -174,7 +223,7 @@
                                   </div>
                                   <p class="comment-form-comment">
                                     <!-- <label for="id_body">Повідомлення:</label> -->
-                                    <textarea name="body" cols="40" rows="10" required="" id="id_body" aria-required="true" placeholder="Ваше повідомлення *" id="comment"></textarea>
+                                    <textarea name="body" cols="40" rows="10" required="" id="id_body" aria-required="true" placeholder="Ваше повідомлення *" id="comment" style="padding: 10px; border-color: #b5b5b5; border-radius: 2px; color: #b5b5b5;"></textarea>
                                   </p>
                                   <p class="form-submit">
                                     <input type="submit" value="Залишити коментар" class="btn btn-lg btn-primary" id="submit">
@@ -213,5 +262,7 @@
                </div>
             </div>
          </main>
+
+
 
 {% endblock %}

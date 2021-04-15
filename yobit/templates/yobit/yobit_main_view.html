@@ -1,0 +1,16 @@
+{% extends 'myhome/base.html' %}
+<meta http-equiv="refresh" content="5" />
+{% block title %}Yobit View{% endblock title %}
+
+
+{% block main %}
+<script>
+    setTimeout(function(){
+    window.location.reload(1);
+    }, 20000);
+</script>
+    {% for item in LIST_OF_ETH_BTCS %}
+        <h1 class="display-1">{{ item }}</h1>
+    {% endfor %}
+
+{% endblock main %}

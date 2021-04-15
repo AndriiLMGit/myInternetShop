@@ -1,27 +1,39 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.db.models import Count
 from .models import BlogPost, CommentBlogPost
 from .forms import CommentBlogPostForm
 from django.http import HttpResponse, HttpResponseRedirect
-# Create your views here.
+from django.core.paginator import Paginator
 
+import json
+
+from django.http import HttpResponse
+# from django.views import View
+from django.contrib.contenttypes.models import ContentType
+
+# Create your views here.
 
 def blog_posts(request):
     blog_posts = BlogPost.objects.all()
+    paginate_by = 2
+    paginator = Paginator(blog_posts, paginate_by)
 
-    context = {
+    page_number = request.GET.get('page')
+    blog_posts= paginator.get_page(page_number)
+
+    data = {
         'blog_posts' : blog_posts,
     }
 
-    return render(request, 'blog/blog_posts.html', context)
+    return render(request, 'blog/blog_posts.html', data)
 
 
 def blog_post_detail(request, id):
 
-    post = get_object_or_404(BlogPost, id = id)
+    post = get_object_or_404(BlogPost, id=id)
 
     # List of active comments for this post
-    comments = post.comments.filter(active=True, parent__isnull=True) #, year, month, day, post
+    comments = post.comments.filter(active=True, parent = None) #, year, month, day, post
 
     if request.method == 'POST':
         # A comment was posted
@@ -42,27 +54,27 @@ def blog_post_detail(request, id):
                     # create replay comment object
                     replay_comment = comment_form.save(commit=False)
                     # assign parent_obj to replay comment
-                    replay_comment.parent_obj = parent_obj
-
-                    #replay_comment.save()
-            # Create Comment object but don't save to database yet
+                    replay_comment.parent = parent_obj
+            # normal comment
+            # create comment object but do not save to database
             new_comment = comment_form.save(commit=False)
-            # Assign the current post to the comment
+            # assign ship to the comment
             new_comment.post = post
-            # Save the comment to the database
+            # save
             new_comment.save()
-
             #return HttpResponseRedirect(post.get_absolute_url())
     else:
         comment_form = CommentBlogPostForm()
 
     count_comments = len(comments)
+    gray_color = 'color: #212121;'
 
     context = {
         'post' : post,
         'comment_form': comment_form,
         'comments': comments,
         'count_comments' : count_comments,
+        'gray_color' : gray_color,
     }
 
     return render(request, 'blog/single_blog_post.html', context)
@@ -70,8 +82,7 @@ def blog_post_detail(request, id):
 
 def edit_comment(request, id):
     edit_comment = get_object_or_404(CommentBlogPost, id = id)
-
-    post_detail_self = BlogPost.objects.get(id = 1)
+    # post_detail_self = BlogPost.objects.get(id = 1)
 
     if request.method == "POST":
         form = CommentBlogPostForm(request.POST, instance = edit_comment)
@@ -84,7 +95,7 @@ def edit_comment(request, id):
             return HttpResponseRedirect('/blog/')
     else:
         form = CommentBlogPostForm(instance = edit_comment)
-    return render(request, 'blog/edit_comment.html', {'form' : form})
+    return render(request, 'blog/edit_comment.html', {'form' : form })
 
 
 def delete_comment(request, id):

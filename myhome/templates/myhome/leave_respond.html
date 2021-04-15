@@ -1,0 +1,34 @@
+{% extends 'myhome/base.html' %}
+
+{% load static %}
+
+{% block title %}Bags{% endblock %}
+
+{% block main %}
+
+<div class="container">
+    <form action="" method="POST" enctype="multipart/form-data" >{% csrf_token %}
+        <div class="form-group">
+            <label for="id_name_of_responders">Name of responders:</label>
+            <input type="text" name="name_of_responders" maxlength="20" required="" id="id_name_of_responders" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="id_text_of_responders">Text of responders:</label>
+            <textarea name="text_of_responders" cols="40" rows="10" required="" id="id_text_of_responders" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="id_name_of_office_worker">Name of office worker:</label>
+            <input type="text" name="name_of_office_worker" maxlength="10" required="" id="id_name_of_office_worker" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="id_avatat_image_of_responder">Avatat image of responder:</label>
+            <input type="file" name="avatat_image_of_responder" required="" id="id_avatat_image_of_responder" class="form-control">
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Send" class="btn btn-primary">
+        </div>
+    </form>
+
+</div>
+
+{% endblock main %}

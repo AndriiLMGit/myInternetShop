@@ -3,6 +3,11 @@
 {% load static %}
 
 {% block title %} Blog {% endblock %}
+{% block breadcrumbs%}
+<li class="item cart">
+   <a href="{% url 'blog_posts' %}">Blog</a>
+</li>       
+{% endblock breadcrumbs %}
 
 {% block main %}
 
@@ -21,11 +26,14 @@
                      <h3 class="post-title"><a href="{% url 'blog_post_detail' blog_post.id %}">{{ blog_post.title_blog_post }}</a></h3>
                      <ul class="post-meta">
                         <li><i class="fa fa-clock-o"></i> {{ blog_post.published_at|date:"H:i D d M Y" }}</li>
-                        <li><a href=""><i class="fa fa-comments-o"></i> {{ count_comments }}Comments</a></li>
-                        <li><i class="fa fa-thumbs-o-up"></i> 256 Likes</li>
+                        <li><a href="{% url 'blog_post_detail' blog_post.id %}"><i class="fa fa-comments-o"></i>
+                          {{ blog_post.comments.count }}  Comments</a></li>
+                        <!-- <li><i class="fa fa-thumbs-o-up"></i> 256 Likes</li> -->
+                        <li><i class="fa fa-thumbs-o-up"></i> 0 Likes</li>
+                        <!-- <li><i class="fa fa-thumbs-o-down"></i> {{ blog_post.dislikes }} Dislikes</li> -->
                      </ul>
                      <div class="post-desc">
-                        <p>{{ blog_post.description_blog_post }}</p>
+                        <p>{{ blog_post.description_blog_post|truncatechars:250 }}</p>
                      </div>
                      <!-- .post-desc -->
                      <a href="{% url 'blog_post_detail' blog_post.id %}" class="link">Read more</a>
@@ -36,16 +44,27 @@
                <div class="toolbar-bottom">
                   <div class="pagination">
                      <ul>
-                        <li class="prev"><a href="#"><i class="fa fa-long-arrow-left"></i> Previous</a></li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><span class="current">3</span></li>
+                        {% if blog_posts.has_previous %}
+                           <li class="prev"><a href="?page={{ blog_posts.previous_page_number }}" style="display:block;"><i class="fa fa-long-arrow-left"></i> Previous</a></li>
+                           <li><a href="?page={{ blog_posts.previous_page_number }}">{{ blog_posts.previous_page_number }}</a></li>
+                        {% else %}
+                           <li class="prev"><a tabindex="-1" aria-disabled="true"><i class="fa fa-long-arrow-left"></i> Previous</a></li>
+                        {% endif %}
+                        <li><a><span class="current">{{ blog_posts.number }}</span></a></li>
+                        <!-- <li><a href="#">3</a></li>
                         <li><a href="#">4</a></li>
                         <li><a href="#">5</a></li>
                         <li><span>...</span></li>
-                        <li><a href="#">19</a></li>
-                        <li class="next"><a href="#">Next <i class="fa fa-long-arrow-right"></i></a></li>
+                        <li><a href="#">19</a></li> -->
+                        {% if blog_posts.has_next %}
+                           <li><a href="?page={{ blog_posts.next_page_number }}">{{ blog_posts.next_page_number }}</a></li>
+                           <li class="next"><a href="?page={{ blog_posts.next_page_number }}" style="display:block;">Next <i class="fa fa-long-arrow-right"></i></a></li>
+                        {% else %}
+                        <!-- <li><a href="?page={{ blog_posts.paginator.num_pages }}">{{ blog_posts.paginator.num_pages }}</a></li> -->
+                           <li class="next"><a tabindex="-1" aria-disabled="true"><i class="fa fa-long-arrow-right"></i> Next</a></li>
+                        {% endif %}
                      </ul>
+                     <p class="mt-5">Всього записів у блозі: <span><h1 class="display-1">{{ blog_posts.paginator.count }}</h1></span></p>
                   </div>
                </div>
             </div>

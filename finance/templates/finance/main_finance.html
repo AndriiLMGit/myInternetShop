@@ -1,0 +1,107 @@
+{% extends 'myhome/base.html' %}
+
+{% load static %}
+
+{% block title %} {{ title }} {% endblock %}
+{% block breadcrumbs %}
+<li class="item cart">
+    <a href="#">Контакти</a>
+ </li>     
+ {% endblock breadcrumbs %}
+
+{% block main %}
+
+<h1>Finance</h1>
+<table>
+    <thead>
+        <tr>
+            <td>{{ valuta }}</td>
+            <td>{{ buy }}</td>
+            <td>{{ sale }}</td>
+            <td>{{ nbu }}</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>It is {% now "jS F Y H:i" %}</td>
+            <td>{{ value|slugify }}</td>
+            <td>{{ value|wordcount }}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+{% endblock %}
+
+
+<!-- <thead>
+    <tr>
+        <td class="col-cy">Валюта</td>
+        <td class="col-buy">Покупка</td>
+        <td class="col-sale">Продажа</td>
+        <td class="col-nbu">НБУ</td>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <th>USD</th>
+        <td>
+            <span class="value -decrease"><span>27.5926</span>
+            <span class="_description">0.0419</span></span>
+        </td>
+        <td>
+            <span class="value -decrease"><span>27.8060</span>
+            <span class="_description">0.0307</span></span>
+        </td>
+        <td>
+            <span class="value -decrease"><span>27.7564</span>
+            <span class="_description">0.0913</span></span>
+        </td>
+    </tr>
+    <tr>
+        <th>EUR</th>
+        <td>
+            <span class="value -decrease">
+            <span>32.8969</span>
+            <span class="_description">0.2846</span></span>
+        </td>
+        <td>
+            <span class="value -decrease"><span>33.3448</span>
+            <span class="_description">0.2410</span></span>
+        </td>
+        <td>
+            <span class="value -decrease"><span>33.4062</span>
+            <span class="_description">0.1503</span></span>
+        </td>
+    </tr>
+    <tr>
+        <th>RUB</th>
+        <td>
+            <span class="value -decrease"><span>0.3356</span>
+            <span class="_description">0.0017</span></span>
+        </td>
+        <td>
+            <span class="value -decrease"><span>0.3828</span>
+            <span class="_description">0.0010</span></span>
+        </td>
+        <td>
+            <span class="value -decrease"><span>0.3766</span>
+            <span class="_description">0.0005</span></span>
+        </td>
+    </tr>
+    <tr>
+        <th>PLN</th>
+        <td>
+            <span class="value -decrease"><span>7.0364</span>
+            <span class="_description">0.0821</span></span>
+        </td>
+        <td>
+            <span class="value -decrease"><span>7.3864</span>
+            <span class="_description">0.0818</span></span></td>
+            <td>
+                <span class="value -decrease"><span>7.3352</span>
+                <span class="_description">0.0644</span></span>
+            </td>
+        </tr>
+    </tbody> -->

@@ -1,0 +1,245 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Коронавірус в Україні</title>
+    <link rel="icon" type="images/favicon" href="{% static 'images/favicon.png' %}">
+    <!-- font -->
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,400italic,500,500italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href="{% static 'font/css/pe-icon-7-stroke.css' %}" media="all" type="text/css" rel="stylesheet"/>
+    <link href="{% static 'font/css/font-awesome.min.css' %}" media="all" type="text/css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            outline: none;
+        }
+        h1, h2, h3, h4, h5, h6, p {
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            height: 670px;
+            background: url('{% static "images/bg3.jpg" %}') no-repeat top left;
+            position: relative;
+            background-size: cover;
+        }
+        .wrapper {
+            width: 1170px;
+            margin: 0 auto;
+        }
+        .microbe {
+            position: absolute;
+            right: 0;
+            top: 11px;
+            width: 715px;
+            height: 659px;
+            /* background: url("{% static 'images/microbe.png' %}") no-repeat; */
+        }
+        .microbe_blured {
+            position: absolute;
+            right: 50px;
+            top: 11px;
+            width: 715px;
+            height: 659px;
+            /* background: url("{% static 'images/microbe-blurred.png' %}") no-repeat; */
+        }
+        .logo {
+            margin: 0 0 0 25px;
+            padding: 40px 0 0 0;
+        }
+        .logo img {
+            width: 60px;
+            height: 85px;;
+        }
+        .title_block {
+            padding: 160px 0 0 0;
+        }
+        .title_block h1 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 75px;
+            color: #fff;
+        }
+        .title_block h5 {
+            margin: 40px 0 0 0;
+            font-family: 'Raleway', sans-serif;
+            font-size: 25px;
+            color: #fff;
+            font-weight: 300;
+            line-height: 1.4;
+        }
+        .title-content {
+            font-family: 'Raleway', sans-serif;
+            font-size: 60px;
+            color: #29594b;
+            margin: 60px 0;
+        }
+        .list-corona-values {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+        }
+        .list-corona-values li {
+            width: 19%;
+            height: 125px;
+            background: #EAF5F1;
+            color: #222;
+            font-size: 35px;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            line-height: 125px;
+        }
+        .list-corona-values li:nth-child(2) {
+            background: #FFE3E2;
+        }
+        .list-corona-text li:nth-child(2) {
+            background: #FFE3E2;
+        }
+        .list-corona-values li:nth-child(4) {
+            background: #DEDEDE;
+        }
+        .list-corona-text li:nth-child(4) {
+            background: #DEDEDE;
+        }
+        .list-corona-text {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+        }
+        .list-corona-text li {
+            width: 19%;
+            background: #EAF5F1;
+            color: #222;
+            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            padding-top: 25px;
+        }
+        .button_back_to_main {
+            width: 230px;
+            margin: 75px auto;
+        }
+        .button_back_to_main a {
+            padding: 15px 20px;
+            background: #29594b;
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Raleway', sans-serif;
+            border-radius: 30px;
+            transition: background 0.5s ease-out;
+        }
+        .button_back_to_main a:hover {
+            background: #27735d;
+        }
+
+        .list-corona-text-responsive {
+          display: none;  
+        }
+        .date_info {
+            padding: 25px 0 0 0;
+            color: #999;
+            font-size: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        /* Адаптив сторінки з ковідом */
+
+        @media screen and (max-width: 1190px) {
+            img {
+                display: block;
+                max-width: 100%;
+                height: auto;
+            }
+            header {
+                
+            }
+            .wrapper {
+                width: auto;
+                padding: 0 15px;
+            }
+            .list-corona-values {
+                flex-direction: column;
+            }
+            .list-corona-values li {
+                width: 100%;
+            }
+            .list-corona-text {
+                display: none;
+            }
+            .list-corona-text li {
+                width: 100%;
+            }
+            .title-content {
+                text-align: center;
+            }
+            .list-corona-text-responsive {
+                display: block;
+            }
+            .microbe {
+                width: auto;
+                height: auto;
+            }
+            @media screen and (max-width: 1120px) {
+                .microbe, .microbe_blured {
+                    display: none;
+                }
+
+                .logo {
+                    margin: 0 auto;
+                    width: 60px;
+                    height: 85px;
+                }
+                .title_block {
+                    text-align: center;
+                }
+            }
+            @media screen and (max-width: 768px) {
+                
+            }
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'js/corona_list.js' %}"></script>
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <div class="logo"><img src="{% static 'images/logo-ukraine.png' %}" alt="Лого Герб України"></div>
+            <div class="title_block">
+                <h1>Коронавірус
+                    <br>в Україні</h1>
+                <h5>Офіційний інформаційний портал<br> Кабінету Міністрів України</h5>
+            </div>
+        </div>
+        <div class="microbe_blured"><img src="{% static 'images/microbe-blurred.png' %}" alt="Microbe"></div>
+        <div class="microbe"><img src="{% static 'images/microbe.png' %}" alt="Microbe"></div>
+    </header>
+    <div class="wrapper">
+        <h1 class="title-content">Ситуація в Україні</h1>
+        <ul class="list-corona-text">
+            <li>хворих на<br>Covid-19</li>
+            <li>нових випадків<br> за добу</li>
+            <li>одужало</li>
+            <li>летальних<br> випадків</li>
+            <li>протестовано</li>
+        </ul>
+        <ul class="list-corona-values">
+            {% for value in all_people %}
+                <li>{{ value }}</li>
+            {% endfor %}
+        </ul>
+            <p class="date_info"> {{ add_date_soup }} </p>
+        <div class="button_back_to_main">
+            <a href="{% url 'index' %}">Повернутися на головну</a>
+        </div>
+    </div>
+
+    
+</body>
+</html>

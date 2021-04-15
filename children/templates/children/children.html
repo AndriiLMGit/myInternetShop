@@ -1,0 +1,291 @@
+{% extends 'myhome/base.html' %}
+
+{% load static %}
+
+{% block title %} Children {% endblock %}
+{% block breadcrumbs%}
+<li class="item cart">
+   <a href="#">Дитячі речі</a>
+</li>     
+{% endblock breadcrumbs %}
+
+{% block main %}
+<div class="img-breadcrumb" style="margin-top: -60px; margin-bottom: 60px;">
+    <img src="{% static 'images/static_banner-1920-295.jpg' %}" alt="">
+</div>
+
+ <main id="maincontent" class="page-main">
+    <div class="container">
+       <div class="columns">
+          <!-- Col main -->
+          <div class="column main">
+             <div class="toolbar">
+                <div class="sort clearfix">
+                   <form action="#" class="ordering pull-left">
+                      <div class="selectbox">
+                         <select class="orderby" name="orderby">
+                            <option value="menu_order">Сортування за</option>
+                            <option value="popularity">Популярністю</option>
+                            <option value="rating">Рейтингом</option>
+                            <option value="date">Новизною</option>
+                            <option value="price">Ціна: від більшого до меншого</option>
+                            <option value="price-desc">Ціна: від меншого до більшого</option>
+                         </select>
+                      </div>
+                   </form>
+                   <div class="style-switch pull-right">                        
+                      <a class="active btn-grid" href="#" data-view="grid"><i class="fa fa-th"></i></a>
+                      <a href="#" class="btn-list" data-view="list"><i class="fa fa-th-list"></i></a>
+                   </div>
+                </div>
+                <!-- .sort -->
+             </div>
+             <div class="product-grid" id="tabs-grid">
+                {% for children_thing in children_things %}
+                <!-- product -->
+                <div class="col-xs-12 col-sm-4">
+                   <div class="product-item wow fadeInUp  animated" data-wow-duration="1s" data-wow-delay="0ms" style="visibility: visible; animation-duration: 1s; animation-delay: 0ms; animation-name: fadeInUp;">
+                      <div class="product-img">
+                         <a href="{% url 'children_view' children_thing.id %}" class="image-hover">
+                         <img src="{{ children_thing.front_image_children_thing.url }}" alt="{{ children_thing.name_children_thing }}" class="product-image-photo">
+                         <img src="{{ children_thing.back_image_children_thing.url }}" alt="{{ children_thing.name_children_thing }}" class="product-image-photo">
+                         </a>
+                      </div>
+                      <div class="product-info">
+                         <div class="ratings">
+                            <div class="ratings">
+                               <i class="fa fa-star"></i>
+                               <i class="fa fa-star"></i>
+                               <i class="fa fa-star"></i>
+                               <i class="fa fa-star empty"></i>
+                               <i class="fa fa-star empty"></i>
+                            </div>
+                         </div>
+                         <div class="product-name">
+                            <a href="{% url 'children_view' children_thing.id %}" class="product-item-link">
+                            {{ children_thing.name_children_thing }}
+                            </a>
+                         </div>
+                         <div class="price-box price-final_price">
+                            <span class="price">
+                            $ {{ children_thing.new_price_children_thing }}
+                            </span>  
+                         </div>
+                         <!-- actions -->
+                         <div class="actions">
+                            <div class="action add-to-cart">
+                               <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart">
+                               </a>
+                            </div>
+                            <div class="action add-to-wishlist">
+                               <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to wishlist">
+                               </a>
+                            </div>
+                            <div class="action add-to-quickview">
+                               <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to quickview">
+                               </a>
+                            </div>
+                         </div>
+                         <!-- end actions -->
+                      </div>
+                   </div>
+                </div>
+                <!-- end product -->
+                {% endfor %}
+                <!-- product -->
+                <!-- <div class="col-xs-12 col-sm-4">
+                   <div class="product-item wow fadeInUp  animated" data-wow-duration="1s" data-wow-delay="0ms" style="visibility: visible; animation-duration: 1s; animation-delay: 0ms; animation-name: fadeInUp;">
+                      <div class="product-img">
+                         <a href="#" class="image-hover">
+                         <img src="{% static 'images/product/2-2.jpg' %}" alt="" class="product-image-photo">
+                         <img src="{% static 'images/product/2.jpg' %}" alt="" class="product-image-photo">
+                         </a>
+                      </div>
+                      <div class="product-info">
+                         <div class="ratings">
+                            <div class="ratings">
+                               <i class="fa fa-star"></i>
+                               <i class="fa fa-star"></i>
+                               <i class="fa fa-star"></i>
+                               <i class="fa fa-star empty"></i>
+                               <i class="fa fa-star empty"></i>
+                            </div>
+                         </div>
+                         <div class="product-name">
+                            <a href="#" class="product-item-link">
+                            Legging Cathedral
+                            </a>
+                         </div>
+                         <div class="price-box price-final_price">
+                            <span class="price">
+                            $ 35.00
+                            </span>  
+                         </div>
+                         
+                         <div class="actions">
+                            <div class="action add-to-cart">
+                               <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart">
+                               </a>
+                            </div>
+                            <div class="action add-to-wishlist">
+                               <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to wishlist">
+                               </a>
+                            </div>
+                            <div class="action add-to-quickview">
+                               <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to quickview">
+                               </a>
+                            </div>
+                         </div>
+                         
+                      </div>
+                   </div>
+                </div> -->
+                <!-- end product -->
+                <!-- product -->
+                <!-- <div class="col-xs-12 col-sm-4">
+                   <div class="product-item wow fadeInUp  animated" data-wow-duration="1s" data-wow-delay="0ms" style="visibility: visible; animation-duration: 1s; animation-delay: 0ms; animation-name: fadeInUp;">
+                      <div class="product-img">
+                         <a href="#" class="image-hover">
+                         <img src="{% static 'images/product/25.jpg' %}" alt="" class="product-image-photo">
+                         <img src="{% static 'images/product/25-2.jpg' %}" alt="" class="product-image-photo">
+                         </a>
+                      </div>
+                      <div class="product-info">
+                         <div class="ratings">
+                            <div class="ratings">
+                               <i class="fa fa-star"></i>
+                               <i class="fa fa-star"></i>
+                               <i class="fa fa-star"></i>
+                               <i class="fa fa-star empty"></i>
+                               <i class="fa fa-star empty"></i>
+                            </div>
+                         </div>
+                         <div class="product-name">
+                            <a href="#" class="product-item-link">
+                            Legging Cathedral
+                            </a>
+                         </div>
+                         <div class="price-box price-final_price">
+                            <span class="price">
+                            $ 35.00
+                            </span>  
+                         </div>
+                         <div class="actions">
+                            <div class="action add-to-cart">
+                               <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart">
+                               </a>
+                            </div>
+                            <div class="action add-to-wishlist">
+                               <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to wishlist">
+                               </a>
+                            </div>
+                            <div class="action add-to-quickview">
+                               <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to quickview">
+                               </a>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div> -->
+                <!-- end product -->
+             </div>
+             <!-- end product grid -->
+             <!-- Product grid -->
+          <div class="product-list" id="tabs-list" style="display: none">
+            {% for children_thing in children_things %}
+                          <!-- product item -->
+                          <div class="product-item">
+                              <div class="row">
+                                  <div class="col-sm-4">
+                                      <div class="product-item-info">
+                                          <a href="{% url 'children_view' children_thing.id %}" class="product-item-photo">
+                                              <span class="product-image-container">
+                                                  <img src="{{ children_thing.front_image_children_thing.url }}" alt="{{ children_thing.name_children_thing }}" class="product-image-photo">
+                                              </span>
+                                          </a>
+                                          <div class="product-label new-label">New</div>
+                                      </div>  
+                                  </div>
+
+                                  <div class="col-sm-8">
+                                      <div class="product-item-details">                                      
+
+                                          <div class="product-item-name">
+                                              <a href="{% url 'children_view' children_thing.id %}" class="product-item-link">
+                                                {{ children_thing.name_children_thing }}
+                                              </a>
+                                          </div>
+
+                                          <div class="ratings">
+                                              <img src="{% static 'images/product/rating.png' %}" alt="" class="rating">
+                                          </div>
+
+                                          <div class="price-box price-final_price">
+                                              <span class="price-container">
+                                                  <span class="price">
+                                                      $ {{ children_thing.new_price_children_thing }}
+                                                  </span>
+                                                  <span class="old-price">
+                                                      $ {{ children_thing.old_price_children_thing }}
+                                                  </span>
+                                              </span>
+                                          </div>
+
+                                          <div class="des-product">
+                                              <span>
+                                                {{ children_thing.describe_children_thing}}
+                                              </span>
+                                          </div>
+                                          <!-- actions -->
+                                          <div class="actions-list">
+                                              <div class="tocart">
+                                                  <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart">
+                                                      Add to cart
+                                                  </a>
+                                              </div>
+                                              <div class="action-list towishlist">
+                                                  <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to wishlist">
+                                                      Add to wishlist
+                                                  </a>
+                                          
+                                              </div>
+                                              <div class="action-list toquickview">
+                                                  <a href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to quickview">
+                                                      Add to quickview
+                                                  </a>
+                                              </div>
+                                          
+                                          </div>
+                                          <!-- end actions -->
+                                      </div>
+                                  </div>
+                              </div>                                  
+                          </div>
+                          <!-- end product item -->
+                          {% endfor %}
+          </div>
+          <!-- end product grid -->
+             <!-- toolbar bottom -->
+             <div class="toolbar-bottom">
+                <div class="pagination">
+                   <ul>
+                      <li class="prev"><a href="#"><i class="fa fa-long-arrow-left"></i> Previous</a></li>
+                      <li><a href="#">1</a></li>
+                      <li><a href="#">2</a></li>
+                      <li><span class="current">3</span></li>
+                      <li><a href="#">4</a></li>
+                      <li><a href="#">5</a></li>
+                      <li><span>...</span></li>
+                      <li><a href="#">19</a></li>
+                      <li class="next"><a href="#">Next <i class="fa fa-long-arrow-right"></i></a></li>
+                   </ul>
+                </div>
+             </div>
+             <!-- end tool bar bottom -->
+          </div>
+       </div>
+    </div>
+ </main>
+
+
+{% endblock main %}

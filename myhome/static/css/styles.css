@@ -1999,6 +1999,10 @@ pre code {
   clear: both;
 }
 
+.comment-form-hide {
+  /* display: none; */
+}
+
 @media (min-width: 768px) {
   .container {
     width: 750px;
@@ -14751,7 +14755,7 @@ website:   	http://www.engocreative.com
 .mini-cart-content {
   position: absolute;
   top: 74px;
-  min-width: 310px;
+  min-width: 330px;
   right: -23px;
   background: #212121;
   z-index: 999;
@@ -20639,13 +20643,13 @@ article.post a.link {
 
 .post-title {
   font-size: 30px;
-  font-family: "Lora Regular";
+  font-family: 'Playfair Display', serif;
   font-weight: normal;
   margin: 0 0 15px;
 }
 
 .post-title a {
-  font-family: "Lora Regular";
+  font-family: 'Playfair Display', serif;
 }
 
 .post-title a:hover {
@@ -20664,6 +20668,10 @@ article.post a.link {
   color: rgba(85, 85, 85, 0.5);
   font-family: 'Montserrat', sans-serif;
 }
+.post-meta li:last-child {
+  margin-right: 0;
+}
+
 
 .post-meta a {
   color: rgba(85, 85, 85, 0.5);

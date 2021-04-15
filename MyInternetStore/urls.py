@@ -18,9 +18,21 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('', include('myhome.urls')),
     path('blog/', include('blog.urls')),
+    path('bags/', include('bags.urls')),
+    path('covid19', include('covid19.urls')),
+    path('accounts/', include('allauth.urls')),
+    path('contact', include('contact.urls')),
+    path('children/', include('children.urls')),
+    path('yobit', include('yobit.urls')),
+    path('finance_ua', include('finance.urls')),
+    path('men/', include('men.urls')),
+
+    
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

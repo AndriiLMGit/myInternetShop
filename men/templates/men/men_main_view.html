@@ -1,0 +1,26 @@
+{% extends 'myhome/base.html' %}
+
+{% block title %}For men{% endblock title %}
+
+
+{% block main %}
+
+    <h1>Тут будуть знаходитися всі чоловічі товари!</h1>
+
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+        {% for tshirt in tshirts %}
+            <div class="col">
+                <a href="{% url 'men_detail_view' tshirt.id %}"><img src="{{ tshirt.image_thumbnail.url  }}" class="img-thumbnail" alt="{{ tshirt.name_brand }}" width="355px;" height="445px;"></a>
+                <div class="card-body">
+                  <a href="{% url 'men_detail_view' tshirt.id %}"><h3 class="card-title" >{{ tshirt.name_brand }}</h3></a>
+                  <div><span>{{ tshirt.price }}</span> $</div>
+                  <p class="card-text">{{ tshirt.color }}</p>
+                  <a href="{% url 'men_detail_view' tshirt.id %}" class="btn btn-primary">View Detail</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    </div>
+
+{% endblock main %}

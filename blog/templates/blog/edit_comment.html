@@ -1,15 +1,20 @@
 {% extends 'myhome/base.html' %}
 
 {% load static %}
+{% block breadcrumbs%}
+<li class="item cart">
+   <a href="{% url 'edit_comment' blog_post.id %}">Blog</a>
+</li>       
+{% endblock breadcrumbs %}
 
 {% block main %}
 
   <form class="comment-form margin-bottom-70" id="commentform" method="post" action="" >
-                                  {% csrf_token %}
-                                  {{ form.as_p }}
-                                  <p class="form-submit">
-                                    <input type="submit" value="Залишити коментар" class="btn btn-lg btn-primary" id="submit">
-                                 </p>
-                              </form>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <p class="form-submit">
+        <input type="submit" value="Залишити коментар" class="btn btn-lg btn-primary" id="submit">
+     </p>
+  </form>
 
 {% endblock %}
