@@ -13,6 +13,9 @@ class Bag(models.Model):
     detail_big_image = models.FileField(upload_to='bags/detail_bags_images/')
     detail_middle_image = models.FileField(upload_to='bags/detail_bags_images/')
     bag_published_at = models.DateTimeField()
+
+    def __str__(self):
+        return self.name_bag
     
 
 class CommentBag(models.Model):
@@ -29,6 +32,3 @@ class CommentBag(models.Model):
 
     class Meta:
         ordering = ('created',)
-
-    # def __str__(self):
-    #     return 'Comment by {} on {}'.format(self.name, self.bag_post)

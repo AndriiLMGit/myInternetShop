@@ -29,7 +29,7 @@ EMAIL_HOST_USER = 'andreydecua@gmail.com'
 EMAIL_HOST_PASSWORD = 'Andrey12121991'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1']
 
